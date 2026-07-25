@@ -1700,6 +1700,13 @@ textarea.form-control {
   to { transform: translateX(0); opacity: 1; }
 }
 
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3.5rem; /* Espacio para Asesoría Técnica */
+}
+
 /* --------------------------------------------------------------------------
    11. RESPONSIVIDAD (MEDIA QUERIES)
    -------------------------------------------------------------------------- */
