@@ -47,7 +47,7 @@
           <li><a href="#inicio" class="nav-link active-pill">INICIO</a></li>
           <li><a href="#productos" class="nav-link">PRODUCTOS</a></li>
           <li><a href="#contacto" class="nav-link">CONTÁCTANOS</a></li>
-          <li><a href="catalogo.html" class="nav-link">CATÁLOGO DIGITAL</a></li>
+          <li><a href="catalogo.html" class="nav-link">BROCHURE DIGITAL</a></li>
         </ul>
       </nav>
 
@@ -69,10 +69,10 @@
 
   <!-- SOBRE NOSOTROS -->
   <section id="nosotros" class="termo-section termo-bg-solid">
-    <div class="container">
-      <div class="termo-grid-2">
+    <div class="container text-center">
+      <h2 class="termo-huge-title" style="margin-bottom: 2rem;">SOBRE NOSOTROS</h2>
+      <div class="termo-grid-2" style="grid-template-columns: 1fr; max-width: 1000px; margin: 0 auto; text-align: left;">
         <div class="termo-content-left">
-          <h2 class="termo-huge-title">SOBRE<br>NOSOTROS</h2>
           <div class="termo-text-block">
             <h3 class="termo-sub-heading">Misión</h3>
             <p>Ser el aliado estratégico de los sectores de hidrocarburos, petróleo, gas y la industria en general, suministrando soluciones integrales en equipos, repuestos, instrumentación, herramientas y elementos de protección personal, respaldadas por productos de alta calidad, asesoría técnica especializada y un servicio oportuno que contribuya a la seguridad, la eficiencia y la continuidad operacional de cada proyecto.</p>
@@ -82,9 +82,6 @@
             <p>Para el año 2028, ser el aliado estratégico líder en el suministro de soluciones industriales para los sectores de hidrocarburos, petróleo, gas y la industria en general, reconocidos por la calidad de nuestros productos, la solidez de nuestro respaldo técnico, la rapidez de nuestra respuesta y nuestro compromiso con la seguridad, la eficiencia y la continuidad operacional de cada cliente.</p>
           </div>
         </div>
-        <div class="termo-image-right">
-          <img src="images/ferreteria.png" alt="Sobre Nosotros" class="termo-img">
-        </div>
       </div>
     </div>
   </section>
@@ -93,34 +90,38 @@
   <section id="productos" class="termo-section termo-bg-light">
     <div class="container text-center">
       <h2 class="termo-section-title">PRODUCTOS</h2>
-      <div class="termo-products-grid">
+      <div class="termo-products-grid termo-cards-grid">
         <!-- Instrumentación -->
-        <div class="termo-product-circle">
+        <div class="termo-product-card">
           <div class="circle-img-box">
             <img src="images/instrumentacion.png" alt="Instrumentación">
           </div>
-          <div class="termo-product-badge">INSTRUMENTACIÓN Y VÁLVULAS</div>
+          <h4 class="termo-card-title">INSTRUMENTACIÓN</h4>
+          <a href="catalogo.html" class="btn-ver-mas">VER MÁS</a>
         </div>
         <!-- Sensores -->
-        <div class="termo-product-circle">
+        <div class="termo-product-card">
           <div class="circle-img-box">
             <img src="images/electrico.png" alt="Sensores">
           </div>
-          <div class="termo-product-badge">SENSORES DE FLUJO</div>
+          <h4 class="termo-card-title">SENSORES DE FLUJO</h4>
+          <a href="catalogo.html" class="btn-ver-mas">VER MÁS</a>
         </div>
         <!-- Transmisión -->
-        <div class="termo-product-circle">
+        <div class="termo-product-card">
           <div class="circle-img-box">
             <img src="images/repuestos.png" alt="Transmisión">
           </div>
-          <div class="termo-product-badge">TRANSMISIÓN Y POTENCIA</div>
+          <h4 class="termo-card-title">TRANSMISIÓN Y POTENCIA</h4>
+          <a href="catalogo.html" class="btn-ver-mas">VER MÁS</a>
         </div>
         <!-- Motores y Bombas -->
-        <div class="termo-product-circle">
+        <div class="termo-product-card">
           <div class="circle-img-box">
             <img src="images/epp.png" alt="Bombas">
           </div>
-          <div class="termo-product-badge">MOTORES Y BOMBAS</div>
+          <h4 class="termo-card-title">MOTORES Y BOMBAS</h4>
+          <a href="catalogo.html" class="btn-ver-mas">VER MÁS</a>
         </div>
       </div>
     </div>
@@ -140,7 +141,45 @@
     </div>
   </section>
 
-  <!-- CONTÁCTANOS (FOOTER ESTILO TERMOVAL) -->
+  <!-- CONTÁCTANOS GRAN TARJETA -->
+  <section id="contacto" class="termo-section termo-bg-transparent">
+    <div class="container">
+      <div class="contact-big-card">
+        <h2 class="contact-big-title">CONTÁCTANOS</h2>
+        <div class="contact-card-grid">
+          <div class="contact-card-image">
+            <img src="images/asesora_pexels.jpg" alt="Asesora SM LUSER" onerror="this.src='https://images.pexels.com/photos/7709121/pexels-photo-7709121.jpeg';">
+          </div>
+          <div class="contact-card-form">
+            <div class="contact-form-banner">
+              Si deseas conocer más sobre nuestros productos o tuviste algún inconveniente con tu compra déjanos tus datos, nosotros te contactaremos.
+            </div>
+            <form id="contactForm">
+              <div class="form-group">
+                <label>Nombre *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Empresa *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Déjanos un comentario</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn-ver-mas" style="width: 100%; border-radius: 5px; font-size: 1.1rem;">ENVIAR</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER INFERIOR -->
   <footer id="contacto" class="termo-footer">
     <div class="container">
       <div class="termo-footer-grid">
