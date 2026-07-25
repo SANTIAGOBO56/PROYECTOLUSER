@@ -1717,23 +1717,55 @@ textarea.form-control {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Topbar */
   .topbar-container {
     justify-content: center;
-    text-align: center;
   }
   .topbar-info {
-    flex-wrap: wrap;
     justify-content: center;
   }
+  /* Ocultar elementos no esenciales de la barra superior en móvil */
+  .topbar-info .topbar-item:nth-child(2),
+  .topbar-info .topbar-item:nth-child(3),
+  .topbar-actions {
+    display: none;
+  }
+
+  /* Navbar Móvil */
+  .header-container {
+    height: 70px;
+  }
   .nav-menu {
-    display: none; /* Toggle responsive menu */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+  }
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
   }
   .mobile-nav-toggle {
     display: block;
+    margin-left: 0.5rem;
   }
+
+  /* Hero */
   .hero-title {
     font-size: 2.2rem;
   }
@@ -1744,18 +1776,48 @@ textarea.form-control {
   .btn-primary-hero, .btn-whatsapp-hero {
     justify-content: center;
   }
+
+  /* Grids */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
   }
-  .stat-item:nth-child(2)::after {
+  .stat-item:nth-child(2)::after, .stat-item:nth-child(1)::after {
     display: none;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
   }
   .modal-product-grid {
     grid-template-columns: 1fr;
   }
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Drawer / Cotizador */
+  .drawer-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-main-title {
+    font-size: 1.8rem;
+  }
+  .hero-sub-title {
+    font-size: 1rem;
+  }
+  .btn-hero-primary {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
   }
 }
 

@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSearchInput();
   setupHeroSlider();
   setupContactForm();
+  setupMobileMenu();
   updateCartUI();
 });
 
@@ -467,6 +468,40 @@ function setupContactForm() {
     
     // Opcional: limpiar formulario después de enviar
     form.reset();
+  });
+}
+
+// ==========================================================================
+// 8. MENÚ MÓVIL (HAMBURGUESA)
+// ==========================================================================
+function setupMobileMenu() {
+  const toggleBtn = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  if (!toggleBtn || !navMenu) return;
+
+  toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    // Cambiar icono
+    const icon = toggleBtn.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+    } else {
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    }
+  });
+
+  // Cerrar el menú si hacen clic en un enlace
+  const links = navMenu.querySelectorAll('.nav-link');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    });
   });
 }
 
