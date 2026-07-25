@@ -1829,203 +1829,273 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   NUEVA SECCIÓN HERO CON VIDEO
+   REDISEÑO ESTILO TERMOVAL (SM LUSER)
    ========================================================================== */
-.hero-video-section {
-  position: relative;
-  height: 80vh;
-  min-height: 600px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.hero-bg-video {
-  position: absolute;
+/* Fondo fijo del video */
+.hero-bg-video-fixed {
+  position: fixed;
   top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: 1;
+  z-index: -2;
   transform: translate(-50%, -50%);
   object-fit: cover;
 }
 
-.video-overlay {
-  position: absolute;
+.video-overlay-fixed {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.75); /* Dark overlay para contraste */
-  z-index: 2;
+  background: rgba(255, 255, 255, 0.4); /* Overlay claro para que resalten los bloques */
+  z-index: -1;
 }
 
-.hero-video-content {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  color: #fff;
-  max-width: 900px;
-  padding: 0 20px;
-  animation: fadeInDown 1.2s ease-out;
+/* Espaciador para ver el video puro */
+.hero-spacer {
+  height: 90vh; /* Deja ver el video al cargar la página */
+  width: 100%;
+  background: transparent;
 }
 
-.hero-main-title {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: var(--color-accent-amber);
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  text-transform: uppercase;
-  line-height: 1.1;
+/* Header Termoval */
+.termoval-header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
-
-.hero-sub-title {
-  font-family: var(--font-body);
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 2.5rem;
-  color: #f8fafc;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  line-height: 1.4;
-}
-
-.btn-hero-primary {
-  display: inline-flex;
+.termo-nav-menu {
+  background: #f1f5f9;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 1rem;
   align-items: center;
-  gap: 0.75rem;
-  background: #25D366; /* WhatsApp Green */
-  color: #fff;
-  font-size: 1.2rem;
+}
+.termo-nav-menu a {
+  color: #334155;
   font-weight: 700;
-  padding: 1.2rem 2.5rem;
-  border-radius: var(--radius-full);
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-  transition: var(--transition-main);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+.termo-nav-menu a.active-pill {
+  background: var(--color-accent-purple);
+  color: white;
+}
+.termo-nav-menu a:hover:not(.active-pill) {
+  background: #e2e8f0;
 }
 
-.btn-hero-primary:hover {
-  background: #1ebc59;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+/* Secciones Generales */
+.termo-section {
+  position: relative;
+  z-index: 10; /* Para que pasen por encima del video */
+  padding: 5rem 0;
+}
+.termo-bg-solid {
+  background: #f8fafc;
+}
+.termo-bg-light {
+  background: #ffffff;
+}
+.termo-bg-transparent {
+  background: rgba(241, 245, 249, 0.85); /* Gris translúcido para que se vea el video */
+  backdrop-filter: blur(5px);
 }
 
-@media (max-width: 768px) {
-  .hero-main-title { font-size: 2.2rem; }
-  .hero-sub-title { font-size: 1.2rem; }
-  .hero-video-section { height: 70vh; min-height: 500px; }
-  .btn-hero-primary { font-size: 1rem; padding: 1rem 1.5rem; }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ==========================================================================
-   SECCIÓN LÍNEAS PRINCIPALES DETALLE
-   ========================================================================== */
-.lines-detail-section {
-  background: var(--bg-alt);
-}
-
-.lines-grid {
+/* Sobre Nosotros */
+.termo-grid-2 {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.termo-huge-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
+}
+.termo-sub-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-purple);
+  margin-bottom: 0.5rem;
+}
+.termo-text-block {
+  margin-bottom: 1.5rem;
+  color: #475569;
+  line-height: 1.6;
+}
+.termo-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Productos Circulares */
+.termo-section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+.termo-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background: var(--color-accent-purple);
+}
+.termo-products-grid {
+  display: flex;
+  justify-content: center;
   gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  flex-wrap: wrap;
 }
-
-.line-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-main);
-  overflow: hidden;
-  transition: var(--transition-main);
+.termo-product-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
 }
-
-.line-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(124, 58, 237, 0.3);
-}
-
-.line-card-header {
-  background: linear-gradient(135deg, var(--color-accent-purple) 0%, #4c1d95 100%);
-  color: #fff;
-  padding: 1.5rem 2rem;
+.circle-img-box {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #f1f5f9;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-bottom: -15px; /* Para que la placa monte un poco */
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+.circle-img-box:hover {
+  transform: translateY(-10px);
+}
+.circle-img-box img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+.termo-product-badge {
+  background: var(--color-accent-purple);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 3;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
 }
 
-.line-card-header i {
-  font-size: 2rem;
-  color: var(--color-accent-amber);
-}
-
-.line-card-header h3 {
-  font-family: var(--font-heading);
+/* Marcas */
+.termo-marcas-title {
   font-size: 1.5rem;
-  margin: 0;
+  font-weight: 800;
+  color: #334155;
+  margin-bottom: 2rem;
+}
+.termo-brands-list {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.termo-brands-list span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #64748b;
 }
 
-.line-card-body {
-  padding: 2rem;
+/* Footer Termoval */
+.termo-footer {
+  background: #fefcfb;
+  padding: 4rem 0 2rem;
+  position: relative;
+  z-index: 10;
 }
-
-.line-features-list {
+.termo-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.termo-footer-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+.termo-contact-list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.termo-contact-list li {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
+  color: #475569;
+  font-size: 0.95rem;
 }
-
-.line-features-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 1.1rem;
-  color: var(--text-main);
-  line-height: 1.4;
+.termo-contact-list i {
+  color: var(--color-accent-purple);
+  font-size: 1.2rem;
 }
-
-.line-features-list i {
-  color: var(--color-accent-emerald);
-  margin-top: 4px;
-}
-
-.line-card-footer {
-  padding: 1.5rem 2rem;
-  background: rgba(124, 58, 237, 0.03);
-  border-top: 1px solid var(--border-subtle);
+.termo-footer-bottom {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.brands-label {
-  font-weight: 700;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+/* Responsividad Termoval */
+@media (max-width: 1024px) {
+  .termo-grid-2 { grid-template-columns: 1fr; }
+  .termo-huge-title { font-size: 3rem; }
+  .termo-footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .termo-footer-right { margin-top: 2rem; }
+  .termo-footer-logo-wrapper { justify-content: center; }
+  .termo-contact-list li { justify-content: center; }
 }
-
-.brands-list {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: var(--color-accent-purple);
-  font-weight: 600;
+@media (max-width: 768px) {
+  .hero-spacer { height: 60vh; }
+  .termo-products-grid { gap: 1rem; }
+  .termo-product-circle { width: 150px; }
+  .circle-img-box { width: 130px; height: 130px; }
+  .termo-product-badge { font-size: 0.7rem; padding: 0.4rem; }
+  .termo-brands-list { gap: 1.5rem; }
+  .termo-brands-list span { font-size: 1rem; }
 }
