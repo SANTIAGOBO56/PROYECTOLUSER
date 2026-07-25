@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suministros Industriales LUSER (SM LUSER) | Catálogo Digital & Cotizaciones</title>
+  <title>Suministros Industriales LUSER (SM LUSER) | Contacto</title>
   
-  <!-- SEO & Meta Etiquetas -->
-  <meta name="description" content="Suministros Industriales LUSER (SM LUSER) - Venta e importación de Ferretería Industrial, Instrumentación y Medición, EPP, Repuestos para Maquinarias y Material Eléctrico. Cotiza en línea al 3118057692.">
-  <meta name="keywords" content="Suministros Industriales, SM LUSER, Ferretería Industrial, Instrumentación, EPP, Repuestos Maquinaria, Material Eléctrico, Colombia, Manómetros, Botas de Seguridad, Rodamientos, Cotizador WhatsApp">
-
+  <meta name="description" content="Contáctanos. Suministros Industriales LUSER (SM LUSER) - Venta e importación de Ferretería Industrial, Instrumentación y Medición, EPP, Repuestos para Maquinarias y Material Eléctrico.">
+  
   <!-- Fuentes Tipográficas Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,8 +44,8 @@
         <ul class="nav-menu termo-nav-menu">
           <li><a href="index.html" class="nav-link">INICIO</a></li>
           <li><a href="index.html#productos" class="nav-link">PRODUCTOS</a></li>
-          <li><a href="contacto.html" class="nav-link">CONTÁCTANOS</a></li>
-          <li><a href="#" class="nav-link active-pill">BROCHURE DIGITAL</a></li>
+          <li><a href="#" class="nav-link active-pill">CONTÁCTANOS</a></li>
+          <li><a href="catalogo.html" class="nav-link">BROCHURE DIGITAL</a></li>
         </ul>
       </nav>
 
@@ -65,34 +63,46 @@
 
   <section class="hero-spacer" style="height: 15vh;"></section>
 
-  <!-- 5. BROCHURE DIGITAL INTERACTIVO -->
-  <section id="catalogo" class="termo-section termo-bg-transparent">
+  <!-- CONTÁCTANOS GRAN TARJETA -->
+  <section class="termo-section termo-bg-transparent" style="min-height: 60vh;">
     <div class="container">
-      <div class="section-title-wrapper">
-        <span class="section-badge"><i class="fa-solid fa-list-check"></i> Brochure Digital</span>
-        <h2 class="section-title">Nuestras Líneas de <span>Suministros Industriales</span></h2>
-        <p class="section-subtitle" style="color: #475569;">
-          Explora nuestros productos organizados por especialidad. Agrega los ítems que requieres a tu Cotizador para recibir la oferta directamente por WhatsApp.
-        </p>
-      </div>
-
-      <div class="catalog-controls-wrapper" style="background: rgba(255,255,255,0.9); padding: 1.5rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-        <div class="search-bar-container">
-          <div class="search-input-group">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por producto, código (ej: SML-FI-1042), o palabra clave...">
-            <button id="searchClearBtn" class="search-clear-btn" onclick="resetSearch()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="contact-big-card">
+        <h2 class="contact-big-title">CONTÁCTANOS</h2>
+        <div class="contact-card-grid">
+          <div class="contact-card-image">
+            <img src="images/asesora_pexels.jpg" alt="Asesora SM LUSER" onerror="this.src='https://images.pexels.com/photos/7709121/pexels-photo-7709121.jpeg';">
+          </div>
+          <div class="contact-card-form">
+            <div class="contact-form-banner">
+              Si deseas conocer más sobre nuestros productos o tuviste algún inconveniente con tu compra déjanos tus datos, nosotros te contactaremos.
+            </div>
+            <form id="contactForm">
+              <div class="form-group">
+                <label>Nombre *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Empresa *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Déjanos un comentario</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn-ver-mas" style="width: 100%; border-radius: 5px; font-size: 1.1rem;">ENVIAR</button>
+            </form>
           </div>
         </div>
-        <div id="categoryTabsContainer" class="category-tabs-container"></div>
       </div>
-
-      <div id="productsGrid" class="products-grid"></div>
     </div>
   </section>
 
-  <!-- CONTÁCTANOS (FOOTER ESTILO TERMOVAL) -->
-  <footer id="contacto" class="termo-footer">
+  <!-- FOOTER INFERIOR -->
+  <footer class="termo-footer">
     <div class="container">
       <div class="termo-footer-grid">
         <div class="termo-footer-left">
@@ -104,7 +114,6 @@
           </ul>
         </div>
         <div class="termo-footer-center">
-          <!-- Espacio para pagos o logos extras (opcional) -->
         </div>
         <div class="termo-footer-right">
           <a href="#" class="logo-wrapper termo-footer-logo-wrapper">
@@ -125,7 +134,7 @@
     </div>
   </footer>
 
-  <!-- 9. PANEL LATERAL COTIZADOR -->
+  <!-- PANEL LATERAL COTIZADOR -->
   <div id="drawerOverlay" class="drawer-overlay" onclick="toggleCotizadorDrawer(false)"></div>
   <div id="drawerPanel" class="drawer-panel">
     <div class="drawer-header">
@@ -144,17 +153,7 @@
     </div>
   </div>
 
-  <!-- 10. MODAL FICHA TÉCNICA -->
-  <div id="productModalBackdrop" class="modal-backdrop">
-    <div class="modal-card">
-      <button class="modal-close-btn" onclick="closeProductModal()"><i class="fa-solid fa-xmark"></i></button>
-      <div id="productModalBody" class="modal-body"></div>
-    </div>
-  </div>
-
-
-
-  <!-- 12. BOTÓN FLOTANTE WHATSAPP -->
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
   <a href="https://wa.me/573118057692?text=Hola%20SM%20LUSER,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20productos" 
      target="_blank" 
      class="whatsapp-float-btn" 
