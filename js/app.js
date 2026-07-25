@@ -324,14 +324,7 @@ function closeProductModal() {
   if (modal) modal.classList.remove("active");
 }
 
-// Modal de Guía para Logo e Imágenes
-function toggleImageGuideModal(open = true) {
-  const modal = document.getElementById("imageGuideModalBackdrop");
-  if (modal) {
-    if (open) modal.classList.add("active");
-    else modal.classList.remove("active");
-  }
-}
+
 
 // ==========================================================================
 // 6. HERO SLIDER E INTERACCIONES
@@ -486,6 +479,6 @@ window.sendWhatsAppQuote = sendWhatsAppQuote;
 window.toggleCotizadorDrawer = toggleCotizadorDrawer;
 window.openProductModal = openProductModal;
 window.closeProductModal = closeProductModal;
-window.toggleImageGuideModal = toggleImageGuideModal;
+
 window.resetSearch = resetSearch;
 
