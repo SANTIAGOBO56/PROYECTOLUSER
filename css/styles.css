@@ -260,16 +260,16 @@ body {
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--text-main);
+  color: #1e293b; /* SM: Slate Oscuro */
 }
 
 .logo-brand-name span {
-  color: var(--color-accent-amber);
+  color: var(--color-accent-amber); /* LUSER: Ámbar */
 }
 
 .logo-brand-tagline {
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: #64748b; /* Suministros Industriales: Gris/Morado apagado */
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;

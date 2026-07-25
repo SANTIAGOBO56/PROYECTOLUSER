@@ -92,18 +92,10 @@ function renderProductsGrid() {
   }
 
   grid.innerHTML = filtered.map(product => {
-    // Determinar clase de stock
-    let stockClass = "stock-in-stock";
-    if (product.stockType === "low-stock") stockClass = "stock-low-stock";
-    if (product.stockType === "on-demand") stockClass = "stock-on-demand";
-
     return `
       <div class="product-card">
         <div class="product-image-container">
           <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='images/hero.png';">
-          <span class="product-stock-badge ${stockClass}">
-            <i class="fa-solid fa-box-open"></i> ${product.stock}
-          </span>
           <span class="product-code-tag">${product.code}</span>
         </div>
         <div class="product-content">
@@ -115,8 +107,8 @@ function renderProductsGrid() {
             <button class="btn-view-details" onclick="openProductModal('${product.id}')">
               <i class="fa-solid fa-file-lines"></i> Ficha Técnica
             </button>
-            <button class="btn-add-quote" onclick="addToCart('${product.id}')">
-              <i class="fa-solid fa-plus"></i> Cotizar
+            <button class="btn-add-quote" onclick="addToCart('${product.id}')" style="font-size: 0.8rem;">
+              <i class="fa-solid fa-plus"></i> AGREGAR AL COTIZADOR
             </button>
           </div>
         </div>
@@ -218,6 +210,7 @@ function updateCartUI() {
           <span class="cart-item-qty-val">${item.quantity}</span>
           <button class="btn-qty" onclick="updateQuantity('${item.product.id}', 1)">+</button>
         </div>
+        <input type="text" class="form-control" style="margin-top: 8px; font-size: 0.85rem; padding: 6px 10px;" placeholder="Especificaciones (medida, material, norma...)" value="${item.specs || ''}" onchange="updateItemSpecs('${item.product.id}', this.value)">
       </div>
       <button class="btn-remove-item" onclick="removeFromCart('${item.product.id}')" title="Eliminar">
         <i class="fa-solid fa-trash-can"></i>
@@ -243,7 +236,11 @@ function sendWhatsAppQuote() {
     message += `${idx + 1}. *${item.product.name}*\n`;
     message += `   • Código: ${item.product.code}\n`;
     message += `   • Categoría: ${item.product.categoryName}\n`;
-    message += `   • Cantidad: ${item.quantity} Unidad(es)\n\n`;
+    message += `   • Cantidad: ${item.quantity} Unidad(es)\n`;
+    if (item.specs) {
+      message += `   • Especificaciones: ${item.specs}\n`;
+    }
+    message += `\n`;
   });
 
   if (userNotes) {
@@ -298,7 +295,7 @@ function openProductModal(productId) {
       <div>
         <img src="${product.image}" alt="${product.name}" class="modal-product-img">
         <button class="btn-send-whatsapp-quote" style="margin-top: 1rem;" onclick="addToCart('${product.id}'); toggleCotizadorDrawer(true); closeProductModal();">
-          <i class="fa-solid fa-plus-circle"></i> Agregar al Cotizador
+          <i class="fa-solid fa-plus-circle"></i> AGREGAR AL COTIZADOR
         </button>
       </div>
       <div>
@@ -509,11 +506,16 @@ function setupMobileMenu() {
 window.setCategory = setCategory;
 window.addToCart = addToCart;
 window.updateQuantity = updateQuantity;
+window.updateItemSpecs = function(productId, specs) {
+  const item = state.cart.find(i => i.product.id === productId);
+  if (item) {
+    item.specs = specs;
+  }
+};
 window.removeFromCart = removeFromCart;
-window.sendWhatsAppQuote = sendWhatsAppQuote;
 window.toggleCotizadorDrawer = toggleCotizadorDrawer;
+window.sendWhatsAppQuote = sendWhatsAppQuote;
 window.openProductModal = openProductModal;
 window.closeProductModal = closeProductModal;
 
 window.resetSearch = resetSearch;
-
