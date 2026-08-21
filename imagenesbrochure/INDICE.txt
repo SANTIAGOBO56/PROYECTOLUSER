@@ -1,0 +1,56 @@
+SM LUSER — FOTOS EXTRAÍDAS DEL BROCHURE
+
+Nota: los nombres son una clasificación visual preliminar basada en las imágenes del brochure; cuando el PDF no da una referencia exacta, se conserva una descripción genérica.
+
+Página 03 | Equipos y partes de instrumentación | Foto 01 | Filtro separador Parker | 01_Instrumentacion/P03_01_Filtro_separador_Parker.png
+Página 03 | Equipos y partes de instrumentación | Foto 02 | Panel/indicador de bombas | 01_Instrumentacion/P03_02_Panel_indicador_de_bombas.png
+Página 03 | Equipos y partes de instrumentación | Foto 03 | Instrumento circular Parker | 01_Instrumentacion/P03_03_Instrumento_circular_Parker.png
+Página 03 | Equipos y partes de instrumentación | Foto 04 | Valvulas de instrumentación | 01_Instrumentacion/P03_04_Valvulas_de_instrumentación.png
+Página 04 | Equipos y partes de instrumentación | Foto 01 | Manómetro | 01_Instrumentacion/P04_01_Manómetro.png
+Página 04 | Equipos y partes de instrumentación | Foto 02 | Bomba/instrumento hidráulico de prueba | 01_Instrumentacion/P04_02_Bomba_instrumento_hidráulico_de_prueba.png
+Página 04 | Equipos y partes de instrumentación | Foto 03 | Indicadores/manómetros de presión | 01_Instrumentacion/P04_03_Indicadores_manómetros_de_presión.png
+Página 05 | Bombas y consumibles | Foto 01 | Bomba centrífuga | 02_Bombas_y_Consumibles/P05_01_Bomba_centrífuga.png
+Página 05 | Bombas y consumibles | Foto 02 | Bomba neumática de doble diafragma | 02_Bombas_y_Consumibles/P05_02_Bomba_neumática_de_doble_diafragma.png
+Página 05 | Bombas y consumibles | Foto 03 | Sellos mecánicos y componentes | 02_Bombas_y_Consumibles/P05_03_Sellos_mecánicos_y_componentes.png
+Página 06 | Manejo y control de fluidos | Foto 01 | Válvulas de proceso | 03_Manejo_y_Control_de_Fluidos/P06_01_Válvulas_de_proceso.png
+Página 06 | Manejo y control de fluidos | Foto 02 | Conjunto de válvulas y accesorios | 03_Manejo_y_Control_de_Fluidos/P06_02_Conjunto_de_válvulas_y_accesorios.png
+Página 06 | Manejo y control de fluidos | Foto 03 | Conector/acople rojo para fluidos | 03_Manejo_y_Control_de_Fluidos/P06_03_Conector_acople_rojo_para_fluidos.png
+Página 07 | Manejo y control de fluidos | Foto 01 | Abrazaderas/conexiones de tubería | 03_Manejo_y_Control_de_Fluidos/P07_01_Abrazaderas_conexiones_de_tubería.png
+Página 07 | Manejo y control de fluidos | Foto 02 | Acoples y conexiones ranuradas | 03_Manejo_y_Control_de_Fluidos/P07_02_Acoples_y_conexiones_ranuradas.png
+Página 07 | Manejo y control de fluidos | Foto 03 | Accesorios de conexión para tubería | 03_Manejo_y_Control_de_Fluidos/P07_03_Accesorios_de_conexión_para_tubería.png
+Página 07 | Manejo y control de fluidos | Foto 04 | Junta/elementos de conexión | 03_Manejo_y_Control_de_Fluidos/P07_04_Junta_elementos_de_conexión.png
+Página 08 | Transmisión y potencia | Foto 01 | Rodamientos y componentes | 04_Transmision_y_Potencia/P08_01_Rodamientos_y_componentes.png
+Página 08 | Transmisión y potencia | Foto 02 | Acoples y elementos de transmisión | 04_Transmision_y_Potencia/P08_02_Acoples_y_elementos_de_transmisión.png
+Página 08 | Transmisión y potencia | Foto 03 | Rodamientos Timken | 04_Transmision_y_Potencia/P08_03_Rodamientos_Timken.png
+Página 08 | Transmisión y potencia | Foto 04 | Elementos de transmisión y acoples | 04_Transmision_y_Potencia/P08_04_Elementos_de_transmisión_y_acoples.png
+Página 09 | Herramientas industriales | Foto 01 | Bomba hidráulica manual Enerpac | 05_Herramientas_Industriales/P09_01_Bomba_hidráulica_manual_Enerpac.png
+Página 09 | Herramientas industriales | Foto 02 | Gato hidráulico | 05_Herramientas_Industriales/P09_02_Gato_hidráulico.png
+Página 09 | Herramientas industriales | Foto 03 | Cilindros hidráulicos Enerpac | 05_Herramientas_Industriales/P09_03_Cilindros_hidráulicos_Enerpac.png
+Página 10 | Productos eléctricos | Foto 01 | Interruptores y protecciones eléctricas | 06_Productos_Electricos/P10_01_Interruptores_y_protecciones_eléctricas.png
+Página 10 | Productos eléctricos | Foto 02 | Cajas/tomas y accesorios eléctricos | 06_Productos_Electricos/P10_02_Cajas_tomas_y_accesorios_eléctricos.png
+Página 10 | Productos eléctricos | Foto 03 | Discos abrasivos y de corte | 06_Productos_Electricos/P10_03_Discos_abrasivos_y_de_corte.png
+Página 10 | Productos eléctricos | Foto 04 | Conector eléctrico industrial | 06_Productos_Electricos/P10_04_Conector_eléctrico_industrial.png
+Página 10 | Productos eléctricos | Foto 05 | Conector eléctrico multipin | 06_Productos_Electricos/P10_05_Conector_eléctrico_multipin.png
+Página 11 | Herramientas industriales | Foto 01 | Herramientas eléctricas DeWalt | 05_Herramientas_Industriales/P11_01_Herramientas_eléctricas_DeWalt.png
+Página 11 | Herramientas industriales | Foto 02 | Herramientas eléctricas Truper | 05_Herramientas_Industriales/P11_02_Herramientas_eléctricas_Truper.png
+Página 12 | Herramientas manuales | Foto 01 | Juego de herramientas manuales | 07_Herramientas_Manuales/P12_01_Juego_de_herramientas_manuales.png
+Página 12 | Herramientas manuales | Foto 02 | Herramientas manuales y de sujeción | 07_Herramientas_Manuales/P12_02_Herramientas_manuales_y_de_sujeción.png
+Página 13 | Mangueras y conectores industriales | Foto 01 | Mangueras y conectores | 08_Mangueras_y_Conectores/P13_01_Mangueras_y_conectores.png
+Página 13 | Mangueras y conectores industriales | Foto 02 | Mangueras industriales | 08_Mangueras_y_Conectores/P13_02_Mangueras_industriales.png
+Página 13 | Mangueras y conectores industriales | Foto 03 | Mangueras hidráulicas con terminales | 08_Mangueras_y_Conectores/P13_03_Mangueras_hidráulicas_con_terminales.png
+Página 14 | Pinturas | Foto 01 | Pinturas Bler | 09_Pinturas/P14_01_Pinturas_Bler.png
+Página 14 | Pinturas | Foto 02 | Pinturas Viniltex/Pintuco | 09_Pinturas/P14_02_Pinturas_Viniltex_Pintuco.png
+Página 14 | Pinturas | Foto 03 | Pintura ICO | 09_Pinturas/P14_03_Pintura_ICO.png
+Página 14 | Pinturas | Foto 04 | Pintura Pintuco | 09_Pinturas/P14_04_Pintura_Pintuco.png
+Página 14 | Pinturas | Foto 05 | Pintura Sayer | 09_Pinturas/P14_05_Pintura_Sayer.png
+Página 14 | Pinturas | Foto 06 | Rodillos y brochas | 09_Pinturas/P14_06_Rodillos_y_brochas.png
+Página 15 | Elementos de protección personal | Foto 01 | Casco, protección auditiva y accesorios | 10_EPP/P15_01_Casco__protección_auditiva_y_accesorios.png
+Página 15 | Elementos de protección personal | Foto 02 | Respirador 3M | 10_EPP/P15_02_Respirador_3M.png
+Página 15 | Elementos de protección personal | Foto 03 | Overol de protección | 10_EPP/P15_03_Overol_de_protección.png
+Página 15 | Elementos de protección personal | Foto 04 | Careta de protección facial | 10_EPP/P15_04_Careta_de_protección_facial.png
+Página 15 | Elementos de protección personal | Foto 05 | Calzado de seguridad | 10_EPP/P15_05_Calzado_de_seguridad.png
+Página 15 | Elementos de protección personal | Foto 06 | Guantes de protección | 10_EPP/P15_06_Guantes_de_protección.png
+Página 16 | Lubricantes y adhesivos | Foto 01 | Lubricante/penetrante CRC | 11_Lubricantes_y_Adhesivos/P16_01_Lubricante_penetrante_CRC.png
+Página 16 | Lubricantes y adhesivos | Foto 02 | Adhesivos Loctite | 11_Lubricantes_y_Adhesivos/P16_02_Adhesivos_Loctite.png
+Página 16 | Lubricantes y adhesivos | Foto 03 | Lubricantes WD-40 | 11_Lubricantes_y_Adhesivos/P16_03_Lubricantes_WD-40.png
+Página 16 | Lubricantes y adhesivos | Foto 04 | Aerosol CRC | 11_Lubricantes_y_Adhesivos/P16_04_Aerosol_CRC.png
