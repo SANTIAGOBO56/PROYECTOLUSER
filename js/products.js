@@ -871,7 +871,7 @@ const PRODUCTS_DATA = [
     category: "lubricantes",
     categoryName: "Lubricantes y Adhesivos",
     code: "SML-LB-1604",
-    image: "imagenesbrochure/11_Lubricantes_y_Adhesivos/P16_04_Aerosol_CRC.png",
+    image: "imagenesbrochure/11_Lubricantes_y_Adhesivos/aerosol crc.jpg",
     shortDesc: "Aerosoles CRC para limpieza de contactos eléctricos, silicona, grasa blanca y dieléctrico.",
     fullDesc: "Aerosoles CRC de uso especializado: CRC QD Contact Cleaner para limpieza de contactos eléctricos y electrónicos, silicona lubricante, grasa blanca, protector dieléctrico y desengrasante industrial de evaporación rápida.",
     specs: [
