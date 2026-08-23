@@ -30,7 +30,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0402",
-    image: "imagenesbrochure/01_Instrumentacion/Test_Pump.png",
+    image: "imagenesbrochure/01_Instrumentacion/TEST PUMP.jpg",
     shortDesc: "Bomba hidráulica de prueba para calibración y verificación de manómetros e instrumentos.",
     fullDesc: "Equipo portátil de prueba hidrostática para calibración de manómetros y transmisores de presión en campo. Generación de presión manual para verificación de instrumentos.",
     specs: [
@@ -46,7 +46,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0302",
-    image: "imagenesbrochure/01_Instrumentacion/P03_02_Panel_indicador_de_bombas.png",
+    image: "imagenesbrochure/01_Instrumentacion/P03_02_Panel_indicador_de_bombas.jpg",
     shortDesc: "Paneles indicadores y controladores para monitoreo de sistemas de bombeo industrial.",
     fullDesc: "Paneles de instrumentación para monitoreo y control de bombas, con indicadores de presión, temperatura y flujo. Integración con sistemas SCADA y PLC para automatización de procesos.",
     specs: [
@@ -62,7 +62,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0303",
-    image: "imagenesbrochure/01_Instrumentacion/P03_03_Instrumento_circular_Parker.png",
+    image: "imagenesbrochure/01_Instrumentacion/P03_03_Instrumento_circular_Parker.jpg",
     shortDesc: "Instrumentos circulares Parker para medición y registro de variables de proceso.",
     fullDesc: "Indicadores circulares de presión y temperatura marca Parker con carátula de alto contraste. Ideales para paneles de control y tableros de instrumentación en plantas de proceso.",
     specs: [
@@ -78,7 +78,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0304",
-    image: "imagenesbrochure/01_Instrumentacion/P03_04_Valvulas_de_instrumentación.png",
+    image: "imagenesbrochure/01_Instrumentacion/P03_04_Valvulas_de_instrumentación.jpg",
     shortDesc: "Válvulas miniatura y manifolds para conexión de instrumentos de medición y control.",
     fullDesc: "Válvulas de instrumentación tipo aguja, bloqueo y purga, manifolds de 2 y 3 vías para conexión segura de manómetros, transmisores y sensores en líneas de proceso.",
     specs: [
@@ -94,7 +94,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0401",
-    image: "imagenesbrochure/01_Instrumentacion/P04_01_Manómetro.png",
+    image: "imagenesbrochure/01_Instrumentacion/P04_01_Manómetro.jpg",
     shortDesc: "Manómetros de glicerina en acero inoxidable para medición de presión en procesos.",
     fullDesc: "Manómetros industriales con caja de acero inoxidable AISI 316, relleno de glicerina para absorción de vibraciones. Conexión inferior y posterior NPT. Rangos de 0 a 10,000 PSI.",
     specs: [
@@ -110,7 +110,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0403",
-    image: "imagenesbrochure/01_Instrumentacion/P04_03_Indicadores_manómetros_de_presión.png",
+    image: "imagenesbrochure/01_Instrumentacion/P04_03_Indicadores_manómetros_de_presión.jpg",
     shortDesc: "Conjunto de indicadores y manómetros para diferentes rangos de presión industrial.",
     fullDesc: "Variedad de manómetros e indicadores de presión en diferentes diámetros, rangos y materiales. Opciones con glicerina, seco, conexión inferior y posterior para múltiples aplicaciones.",
     specs: [
@@ -159,7 +159,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0407",
-    image: "imagenesbrochure/01_Instrumentacion/Manometros_Winters_Instruments.jpeg",
+    image: "imagenesbrochure/01_Instrumentacion/Manometros_Winters_Instruments.jpg",
     shortDesc: "Conjunto de manómetros industriales Winters de alta calidad.",
     fullDesc: "Manómetros Winters Instruments robustos, diseñados para soportar vibraciones y proveer lecturas precisas en entornos hostiles.",
     specs: [{ label: "Marca", value: "Winters Instruments" }, { label: "Uso", value: "Lectura de Presión Industrial" }]
@@ -170,7 +170,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0408",
-    image: "imagenesbrochure/01_Instrumentacion/Valvula_Reguladora_Shearflo.jpeg",
+    image: "imagenesbrochure/01_Instrumentacion/Valvula_Reguladora_Shearflo.jpg",
     shortDesc: "Válvula y regulador de precisión Shearflo (Made in U.S.A.).",
     fullDesc: "Válvula reguladora de fluido Shearflo. Construcción de alto estándar para control exacto y confiabilidad a largo plazo.",
     specs: [{ label: "Marca", value: "Shearflo" }, { label: "Origen", value: "U.S.A." }]
@@ -181,7 +181,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0409",
-    image: "imagenesbrochure/01_Instrumentacion/Valvula_Control_Manual.jpeg",
+    image: "imagenesbrochure/01_Instrumentacion/Valvula_Control_Manual.jpg",
     shortDesc: "Válvula de operación manual con palanca para control de flujo.",
     fullDesc: "Válvula resistente con palanca ergonómica, cuerpo en hierro o acero con bridas, ideal para accionamiento manual rápido en líneas de flujo.",
     specs: [{ label: "Accionamiento", value: "Manual por Palanca" }, { label: "Aplicación", value: "Control de Flujo" }]
