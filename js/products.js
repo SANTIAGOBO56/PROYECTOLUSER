@@ -14,7 +14,7 @@ const PRODUCTS_DATA = [
     name: "Acumulador",
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
-    code: "SML-INST-0301",
+    code: "ACCUMULATOR KOOMEY TYPE 80",
     image: "imagenesbrochure/01_Instrumentacion/acumulador.jpg",
     shortDesc: "Acumulador hidroneumático para estabilización de presión y amortiguación.",
     fullDesc: "Acumulador industrial diseñado para absorber pulsaciones, estabilizar presión y proteger equipos hidráulicos críticos.",
