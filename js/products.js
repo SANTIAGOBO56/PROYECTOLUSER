@@ -120,7 +120,173 @@ const PRODUCTS_DATA = [
       { label: "Carátula", value: "2\", 2½\", 4\", 6\"" },
       { label: "Norma", value: "ASME B40.100" }
     ]
+  }
+  ,{
+    id: "inst-008",
+    name: "Pressure Switch Barksdale",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0404",
+    image: "imagenesbrochure/01_Instrumentacion/Barksdale_Pressure_Switch.jpeg",
+    shortDesc: "Interruptor de presión Barksdale para aplicaciones industriales exigentes.",
+    fullDesc: "Switch de presión Barksdale altamente confiable, ideal para monitoreo de sistemas críticos donde la seguridad y precisión son indispensables.",
+    specs: [{ label: "Marca", value: "Barksdale" }, { label: "Tipo", value: "Pressure Switch" }]
   },
+  {
+    id: "inst-009",
+    name: "Filtro de Alta Presión en Línea",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0405",
+    image: "imagenesbrochure/01_Instrumentacion/Filtro_Alta_Presion_En_Linea.jpeg",
+    shortDesc: "Carcasa de filtro en línea diseñada para soportar altas presiones.",
+    fullDesc: "Estructura metálica de alta resistencia con malla protectora, ideal para filtrado en líneas hidráulicas y de alta presión.",
+    specs: [{ label: "Tipo", value: "Filtro de Alta Presión" }, { label: "Material", value: "Acero / Aleación especial" }]
+  },
+  {
+    id: "inst-010",
+    name: "Manómetro Matherne 15,000 PSI",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0406",
+    image: "imagenesbrochure/01_Instrumentacion/Manometro_Matherne_15000_PSI.jpeg",
+    shortDesc: "Manómetro Matherne para alta presión, capacidad de 15,000 PSI.",
+    fullDesc: "Manómetro de instrumentación Matherne con booster de presión 4:1. Lectura clara y alta durabilidad para monitoreo de presión extrema.",
+    specs: [{ label: "Marca", value: "Matherne Instrumentation" }, { label: "Presión Máxima", value: "15,000 PSI" }]
+  },
+  {
+    id: "inst-011",
+    name: "Manómetros Winters Instruments",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0407",
+    image: "imagenesbrochure/01_Instrumentacion/Manometros_Winters_Instruments.jpeg",
+    shortDesc: "Conjunto de manómetros industriales Winters de alta calidad.",
+    fullDesc: "Manómetros Winters Instruments robustos, diseñados para soportar vibraciones y proveer lecturas precisas en entornos hostiles.",
+    specs: [{ label: "Marca", value: "Winters Instruments" }, { label: "Uso", value: "Lectura de Presión Industrial" }]
+  },
+  {
+    id: "inst-012",
+    name: "Válvula Reguladora Shearflo",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0408",
+    image: "imagenesbrochure/01_Instrumentacion/Valvula_Reguladora_Shearflo.jpeg",
+    shortDesc: "Válvula y regulador de precisión Shearflo (Made in U.S.A.).",
+    fullDesc: "Válvula reguladora de fluido Shearflo. Construcción de alto estándar para control exacto y confiabilidad a largo plazo.",
+    specs: [{ label: "Marca", value: "Shearflo" }, { label: "Origen", value: "U.S.A." }]
+  },
+  {
+    id: "inst-013",
+    name: "Válvula de Control Manual",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0409",
+    image: "imagenesbrochure/01_Instrumentacion/Valvula_Control_Manual.jpeg",
+    shortDesc: "Válvula de operación manual con palanca para control de flujo.",
+    fullDesc: "Válvula resistente con palanca ergonómica, cuerpo en hierro o acero con bridas, ideal para accionamiento manual rápido en líneas de flujo.",
+    specs: [{ label: "Accionamiento", value: "Manual por Palanca" }, { label: "Aplicación", value: "Control de Flujo" }]
+  },
+  {
+    id: "inst-014",
+    name: "Bloque Manifold de Aleación",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0410",
+    image: "imagenesbrochure/01_Instrumentacion/Bloque_Manifold_Aluminio.jpeg",
+    shortDesc: "Bloque de distribución (manifold) mecanizado con precisión.",
+    fullDesc: "Componente central mecanizado para distribución y control en sistemas hidráulicos o neumáticos.",
+    specs: [{ label: "Tipo", value: "Manifold" }, { label: "Construcción", value: "Mecanizado de Precisión" }]
+  },
+  {
+    id: "inst-015",
+    name: "Válvula de Control Direccional Barksdale (Vista Trasera)",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0411",
+    image: "imagenesbrochure/01_Instrumentacion/Barksdale_Directional_Control_Valve.jpeg",
+    shortDesc: "Válvula direccional Barksdale, repuesto original.",
+    fullDesc: "Válvula de control direccional para manejar flujos complejos en sistemas de instrumentación críticos.",
+    specs: [{ label: "Marca", value: "Barksdale" }, { label: "Tipo", value: "Directional Control Valve" }]
+  },
+  {
+    id: "inst-016",
+    name: "Carcasa de Filtro Industrial",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0412",
+    image: "imagenesbrochure/01_Instrumentacion/Carcasa_Filtro_Industrial.jpeg",
+    shortDesc: "Componente de filtración para instrumentación.",
+    fullDesc: "Carcasa de recambio para sistemas de filtrado de alta presión.",
+    specs: [{ label: "Uso", value: "Filtración en Línea" }]
+  },
+  {
+    id: "inst-017",
+    name: "Manómetro Matherne 15,000 PSI (Otra Vista)",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0413",
+    image: "imagenesbrochure/01_Instrumentacion/Manometro_Matherne_15000_PSI_2.jpeg",
+    shortDesc: "Manómetro Matherne, equipo de lectura de alta capacidad.",
+    fullDesc: "Manómetro Matherne 15000 PSI, equipo pesado para operaciones de alto torque o presión.",
+    specs: [{ label: "Marca", value: "Matherne Instrumentation" }, { label: "Lectura", value: "Hasta 15,000" }]
+  },
+  {
+    id: "inst-018",
+    name: "Kits de Sellos Mecánicos (Set)",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0414",
+    image: "imagenesbrochure/01_Instrumentacion/Kits_Sellos_Mecanicos.jpeg",
+    shortDesc: "Conjunto de sellos mecánicos para mantenimiento preventivo.",
+    fullDesc: "Kits completos de sellos mecánicos empacados para reemplazo directo en bombas y equipos rotativos.",
+    specs: [{ label: "Contenido", value: "Sellos Mecánicos" }, { label: "Uso", value: "Mantenimiento Preventivo" }]
+  },
+  {
+    id: "inst-019",
+    name: "Válvula de Control Direccional Barksdale",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0415",
+    image: "imagenesbrochure/01_Instrumentacion/Valvula_Control_Direccional_Barksdale.jpeg",
+    shortDesc: "Válvula Barksdale con palanca robusta.",
+    fullDesc: "Válvula de control direccional Barksdale (Made in U.S.A.). Diseñada para operar en condiciones extremas y tolerar hasta 3000 PSI.",
+    specs: [{ label: "Marca", value: "Barksdale" }, { label: "Presión de Trabajo", value: "Hasta 3,000 PSI" }]
+  },
+  {
+    id: "inst-020",
+    name: "Contador Digital Matherne para Bombas",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0416",
+    image: "imagenesbrochure/01_Instrumentacion/Contador_Digital_Matherne_Bombas.jpeg",
+    shortDesc: "Panel digital Matherne para contador de ciclos de bombas.",
+    fullDesc: "Panel de acero inoxidable con contadores digitales de 'Strokes/Minute' y 'Total Strokes' para dos bombas (Pump 1 y Pump 2).",
+    specs: [{ label: "Marca", value: "Matherne Instrumentation" }, { label: "Funciones", value: "Contador Digital de Ciclos" }]
+  },
+  {
+    id: "inst-021",
+    name: "Conector Eléctrico Multipin Industrial",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0417",
+    image: "imagenesbrochure/01_Instrumentacion/Conector_Electrico_Multipin.jpeg",
+    shortDesc: "Conectores circulares multipin para transmisión de señales.",
+    fullDesc: "Conectores robustos diseñados para garantizar conexiones seguras en paneles de control y sensores de instrumentación.",
+    specs: [{ label: "Tipo", value: "Conector Circular Multipin" }, { label: "Aplicación", value: "Señales Eléctricas y Control" }]
+  },
+  {
+    id: "inst-022",
+    name: "Kits de Sellos Pacseal Hydraulics SV-100",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0418",
+    image: "imagenesbrochure/01_Instrumentacion/Kits_Sellos_Pacseal_Hydraulics.jpeg",
+    shortDesc: "Kit de sellos y reparación para válvulas SV-100.",
+    fullDesc: "Seal Kit SV-100 Control Valve de Pacseal Hydraulics (Made in U.S.A.). Incluye elastómeros, anillos y empaques originales.",
+    specs: [{ label: "Marca", value: "Pacseal Hydraulics" }, { label: "Modelo Compatible", value: "SV-100 Control Valve" }]
+  }
+
 
   // ═══════════════════════════════════════════════════════════════
   // 2. BOMBAS Y CONSUMIBLES
