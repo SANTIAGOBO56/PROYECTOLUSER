@@ -560,12 +560,17 @@
   <!-- CATÁLOGO DE PRODUCTOS -->
   <section id="catalogo" class="brochure-catalog-section">
     <div class="container">
-      <!-- Buscador -->
-      <div class="brochure-search-container">
+      <!-- Buscador y Botón Volver -->
+      <div class="brochure-search-container" style="display: flex; flex-direction: column; gap: 1rem;">
         <div class="brochure-search-group">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <input type="text" id="searchInput" class="brochure-search-input" placeholder="Buscar por producto, código (ej: SML-INST-101)...">
           <button id="searchClearBtn" class="brochure-search-clear" onclick="resetSearch()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div style="text-align: center;">
+          <a href="catalogo.html" class="brochure-cta-btn secondary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; color: #4c1d95; border: 1px solid #4c1d95; background: #fff;">
+            <i class="fa-solid fa-arrow-left"></i> Volver al Catálogo General
+          </a>
         </div>
       </div>
 
@@ -698,10 +703,62 @@
   <!-- Carga de Scripts -->
   <script src="js/products.js"></script>
   <script>
-    // Filtrar los productos para que solo se muestre Instrumentación en esta página
-    if (window.PRODUCTS_DATA) {
-      window.PRODUCTS_DATA = window.PRODUCTS_DATA.filter(p => p.category === 'instrumentacion');
-    }
+    // Sobrescribir la función de renderizado de app.js para esta página específica
+    // Queremos que los productos se vean como los "cuadritos" de las categorías
+    document.addEventListener('DOMContentLoaded', () => {
+      // Retrasar ligeramente para asegurar que app.js ya haya cargado
+      setTimeout(() => {
+        // Redefinir la función de renderizado de la grilla
+        window.renderProductsGrid = function() {
+          const grid = document.getElementById("productsGrid");
+          if (!grid || !window.PRODUCTS_DATA) return;
+          
+          // Filtrar por instrumentación (por si acaso) y por término de búsqueda
+          const filtered = window.PRODUCTS_DATA.filter(product => {
+            const isInst = product.category === 'instrumentacion';
+            const q = (state.searchQuery || "").toLowerCase().trim();
+            const matchesSearch = !q || 
+              product.name.toLowerCase().includes(q) ||
+              product.code.toLowerCase().includes(q) ||
+              product.shortDesc.toLowerCase().includes(q);
+            return isInst && matchesSearch;
+          });
+          
+          if (filtered.length === 0) {
+            grid.innerHTML = `<div class="no-results-box" style="grid-column: 1/-1; padding: 3rem; text-align: center;">
+              <i class="fa-solid fa-magnifying-glass-chart" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
+              <h3>No se encontraron repuestos</h3>
+              <p>Intenta con otro término de búsqueda.</p>
+            </div>`;
+            return;
+          }
+          
+          // Cambiar el layout de la grilla para que parezcan cuadritos
+          grid.className = "brochure-lines-grid";
+          
+          grid.innerHTML = filtered.map(product => `
+            <div class="brochure-line-card" onclick="openProductModal('${product.id}')" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="brochure-line-icon" style="width: 80px; height: 80px; margin: 0 auto 1rem; overflow: hidden; background: #fff; padding: 5px;">
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+              <div class="brochure-line-name" style="margin-bottom: 0.5rem; font-size: 0.95rem;">${product.name}</div>
+              <span class="brochure-line-count" style="font-size: 0.8rem;">CÓD: ${product.code}</span>
+            </div>
+          `).join('');
+        };
+        
+        // Forzar el renderizado inicial con el nuevo estilo
+        window.renderProductsGrid();
+        
+        // Desactivar el "Active Pill" de Brochure Digital para que no confunda
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          if(link.textContent.includes('BROCHURE DIGITAL')) {
+            link.classList.remove('active-pill');
+          }
+        });
+      }, 100);
+    });
   </script>
   <script src="js/app.js"></script>
 </body>
