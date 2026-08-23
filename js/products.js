@@ -129,7 +129,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Barksdale_Pressure_Switch.jpeg",
     shortDesc: "Interruptor de presión Barksdale para aplicaciones industriales exigentes.",
     fullDesc: "Switch de presión Barksdale altamente confiable, ideal para monitoreo de sistemas críticos donde la seguridad y precisión son indispensables.",
-    specs: [{ label: "Marca", value: "Barksdale" }, { label: "Tipo", value: "Pressure Switch" }]
+    specs: [
+      { label: "Marca", value: "Barksdale" },
+      { label: "Tipo", value: "Pressure Switch (interruptor de presión)" },
+      { label: "Rango", value: "Ajustable según modelo (50-3000 PSI)" },
+      { label: "Conexión", value: "¼\" NPT" },
+      { label: "Protección", value: "NEMA 4 / IP65" },
+      { label: "Aplicación", value: "Sistemas hidráulicos y neumáticos críticos" }
+    ]
   },
   {
     id: "inst-009",
@@ -140,7 +147,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Filtro_Alta_Presion_En_Linea.jpeg",
     shortDesc: "Carcasa de filtro en línea diseñada para soportar altas presiones.",
     fullDesc: "Estructura metálica de alta resistencia con malla protectora, ideal para filtrado en líneas hidráulicas y de alta presión.",
-    specs: [{ label: "Tipo", value: "Filtro de Alta Presión" }, { label: "Material", value: "Acero / Aleación especial" }]
+    specs: [
+      { label: "Tipo", value: "Filtro de Alta Presión en Línea" },
+      { label: "Material", value: "Acero / Aleación especial" },
+      { label: "Presión de trabajo", value: "Hasta 6,000 PSI" },
+      { label: "Conexión", value: "NPT / Bridada" },
+      { label: "Malla filtrante", value: "10 a 200 micras" },
+      { label: "Aplicación", value: "Filtrado en líneas hidráulicas de alta presión" }
+    ]
   },
   {
     id: "inst-010",
@@ -151,7 +165,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Manometro_Matherne_15000_PSI.jpeg",
     shortDesc: "Manómetro Matherne para alta presión, capacidad de 15,000 PSI.",
     fullDesc: "Manómetro de instrumentación Matherne con booster de presión 4:1. Lectura clara y alta durabilidad para monitoreo de presión extrema.",
-    specs: [{ label: "Marca", value: "Matherne Instrumentation" }, { label: "Presión Máxima", value: "15,000 PSI" }]
+    specs: [
+      { label: "Marca", value: "Matherne Instrumentation" },
+      { label: "Presión Máxima", value: "15,000 PSI" },
+      { label: "Booster", value: "Ratio 4:1" },
+      { label: "Material caja", value: "Acero inoxidable AISI 316" },
+      { label: "Diámetro carátula", value: "4\" / 6\"" },
+      { label: "Conexión", value: "½\" NPT inferior" }
+    ]
   },
   {
     id: "inst-011",
@@ -162,7 +183,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Manometros_Winters_Instruments.jpg",
     shortDesc: "Conjunto de manómetros industriales Winters de alta calidad.",
     fullDesc: "Manómetros Winters Instruments robustos, diseñados para soportar vibraciones y proveer lecturas precisas en entornos hostiles.",
-    specs: [{ label: "Marca", value: "Winters Instruments" }, { label: "Uso", value: "Lectura de Presión Industrial" }]
+    specs: [
+      { label: "Marca", value: "Winters Instruments" },
+      { label: "Uso", value: "Lectura de Presión Industrial" },
+      { label: "Material caja", value: "Acero inoxidable AISI 304/316" },
+      { label: "Relleno", value: "Glicerina para absorción de vibraciones" },
+      { label: "Rangos", value: "0-100 a 0-10,000 PSI" },
+      { label: "Norma", value: "EN 837-1 / ASME B40.100" }
+    ]
   },
   {
     id: "inst-012",
@@ -173,7 +201,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Valvula_Reguladora_Shearflo.jpg",
     shortDesc: "Válvula y regulador de precisión Shearflo (Made in U.S.A.).",
     fullDesc: "Válvula reguladora de fluido Shearflo. Construcción de alto estándar para control exacto y confiabilidad a largo plazo.",
-    specs: [{ label: "Marca", value: "Shearflo" }, { label: "Origen", value: "U.S.A." }]
+    specs: [
+      { label: "Marca", value: "Shearflo" },
+      { label: "Origen", value: "U.S.A." },
+      { label: "Tipo", value: "Válvula reguladora de flujo" },
+      { label: "Presión de trabajo", value: "Hasta 5,000 PSI" },
+      { label: "Material", value: "Acero inoxidable / Bronce" },
+      { label: "Aplicación", value: "Control de caudal en sistemas hidráulicos" }
+    ]
   },
   {
     id: "inst-013",
@@ -184,7 +219,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Valvula_Control_Manual.jpg",
     shortDesc: "Válvula de operación manual con palanca para control de flujo.",
     fullDesc: "Válvula resistente con palanca ergonómica, cuerpo en hierro o acero con bridas, ideal para accionamiento manual rápido en líneas de flujo.",
-    specs: [{ label: "Accionamiento", value: "Manual por Palanca" }, { label: "Aplicación", value: "Control de Flujo" }]
+    specs: [
+      { label: "Accionamiento", value: "Manual por Palanca" },
+      { label: "Aplicación", value: "Control de Flujo" },
+      { label: "Material cuerpo", value: "Hierro fundido / Acero al carbón" },
+      { label: "Conexión", value: "Bridada ANSI 150/300" },
+      { label: "Tamaños", value: "2\" a 12\"" },
+      { label: "Temperatura", value: "-20°C a +200°C" }
+    ]
   },
   {
     id: "inst-014",
@@ -195,7 +237,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Bloque_Manifold_Aluminio.jpeg",
     shortDesc: "Bloque de distribución (manifold) mecanizado con precisión.",
     fullDesc: "Componente central mecanizado para distribución y control en sistemas hidráulicos o neumáticos.",
-    specs: [{ label: "Tipo", value: "Manifold" }, { label: "Construcción", value: "Mecanizado de Precisión" }]
+    specs: [
+      { label: "Tipo", value: "Manifold de distribución" },
+      { label: "Construcción", value: "Mecanizado de Precisión CNC" },
+      { label: "Material", value: "Aluminio anodizado / Acero inoxidable" },
+      { label: "Puertos", value: "Múltiples salidas roscadas NPT/SAE" },
+      { label: "Presión de trabajo", value: "Hasta 5,000 PSI" },
+      { label: "Aplicación", value: "Sistemas hidráulicos y neumáticos" }
+    ]
   },
   {
     id: "inst-015",
@@ -206,7 +255,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Barksdale_Directional_Control_Valve.jpeg",
     shortDesc: "Válvula direccional Barksdale, repuesto original.",
     fullDesc: "Válvula de control direccional para manejar flujos complejos en sistemas de instrumentación críticos.",
-    specs: [{ label: "Marca", value: "Barksdale" }, { label: "Tipo", value: "Directional Control Valve" }]
+    specs: [
+      { label: "Marca", value: "Barksdale" },
+      { label: "Tipo", value: "Directional Control Valve" },
+      { label: "Accionamiento", value: "Solenoide / Manual" },
+      { label: "Presión", value: "Hasta 3,000 PSI" },
+      { label: "Material", value: "Acero con recubrimiento anti-corrosión" },
+      { label: "Aplicación", value: "Control de flujo direccional en sistemas críticos" }
+    ]
   },
   {
     id: "inst-016",
@@ -217,7 +273,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Carcasa_Filtro_Industrial.jpeg",
     shortDesc: "Componente de filtración para instrumentación.",
     fullDesc: "Carcasa de recambio para sistemas de filtrado de alta presión.",
-    specs: [{ label: "Uso", value: "Filtración en Línea" }]
+    specs: [
+      { label: "Uso", value: "Filtración en Línea" },
+      { label: "Tipo", value: "Carcasa de filtro de alta presión" },
+      { label: "Material", value: "Acero al carbón / Inoxidable" },
+      { label: "Presión", value: "Hasta 6,000 PSI" },
+      { label: "Elemento filtrante", value: "Malla metálica reemplazable" },
+      { label: "Conexión", value: "NPT / Bridada" }
+    ]
   },
   {
     id: "inst-017",
@@ -228,7 +291,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Manometro_Matherne_15000_PSI_2.jpeg",
     shortDesc: "Manómetro Matherne, equipo de lectura de alta capacidad.",
     fullDesc: "Manómetro Matherne 15000 PSI, equipo pesado para operaciones de alto torque o presión.",
-    specs: [{ label: "Marca", value: "Matherne Instrumentation" }, { label: "Lectura", value: "Hasta 15,000" }]
+    specs: [
+      { label: "Marca", value: "Matherne Instrumentation" },
+      { label: "Lectura", value: "Hasta 15,000 PSI" },
+      { label: "Material caja", value: "Acero inoxidable AISI 316" },
+      { label: "Diámetro", value: "6\" de carátula" },
+      { label: "Relleno", value: "Glicerina para vibraciones" },
+      { label: "Conexión", value: "½\" NPT inferior" }
+    ]
   },
   {
     id: "inst-018",
@@ -239,7 +309,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Kits_Sellos_Mecanicos.jpeg",
     shortDesc: "Conjunto de sellos mecánicos para mantenimiento preventivo.",
     fullDesc: "Kits completos de sellos mecánicos empacados para reemplazo directo en bombas y equipos rotativos.",
-    specs: [{ label: "Contenido", value: "Sellos Mecánicos" }, { label: "Uso", value: "Mantenimiento Preventivo" }]
+    specs: [
+      { label: "Contenido", value: "Sellos mecánicos completos" },
+      { label: "Uso", value: "Mantenimiento Preventivo de bombas" },
+      { label: "Materiales", value: "Carburo de silicio, Viton, PTFE" },
+      { label: "Tipos", value: "Simple, doble, cartucho" },
+      { label: "Compatibilidad", value: "Bombas centrífugas y rotativas" },
+      { label: "Norma", value: "API 682 / DIN 24960" }
+    ]
   },
   {
     id: "inst-019",
@@ -250,7 +327,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Valvula_Control_Direccional_Barksdale.jpeg",
     shortDesc: "Válvula Barksdale con palanca robusta.",
     fullDesc: "Válvula de control direccional Barksdale (Made in U.S.A.). Diseñada para operar en condiciones extremas y tolerar hasta 3000 PSI.",
-    specs: [{ label: "Marca", value: "Barksdale" }, { label: "Presión de Trabajo", value: "Hasta 3,000 PSI" }]
+    specs: [
+      { label: "Marca", value: "Barksdale (U.S.A.)" },
+      { label: "Presión de Trabajo", value: "Hasta 3,000 PSI" },
+      { label: "Accionamiento", value: "Manual por palanca robusta" },
+      { label: "Material", value: "Acero con tratamiento anti-corrosión" },
+      { label: "Conexión", value: "¼\" / ½\" NPT" },
+      { label: "Temperatura", value: "-40°C a +120°C" }
+    ]
   },
   {
     id: "inst-020",
@@ -261,7 +345,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Contador_Digital_Matherne_Bombas.jpeg",
     shortDesc: "Panel digital Matherne para contador de ciclos de bombas.",
     fullDesc: "Panel de acero inoxidable con contadores digitales de 'Strokes/Minute' y 'Total Strokes' para dos bombas (Pump 1 y Pump 2).",
-    specs: [{ label: "Marca", value: "Matherne Instrumentation" }, { label: "Funciones", value: "Contador Digital de Ciclos" }]
+    specs: [
+      { label: "Marca", value: "Matherne Instrumentation" },
+      { label: "Funciones", value: "Strokes/Minute + Total Strokes" },
+      { label: "Canales", value: "2 canales (Pump 1 y Pump 2)" },
+      { label: "Material panel", value: "Acero inoxidable" },
+      { label: "Display", value: "Digital LED de alta visibilidad" },
+      { label: "Protección", value: "NEMA 4 / IP65" }
+    ]
   },
   {
     id: "inst-021",
@@ -272,7 +363,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Conector_Electrico_Multipin.jpeg",
     shortDesc: "Conectores circulares multipin para transmisión de señales.",
     fullDesc: "Conectores robustos diseñados para garantizar conexiones seguras en paneles de control y sensores de instrumentación.",
-    specs: [{ label: "Tipo", value: "Conector Circular Multipin" }, { label: "Aplicación", value: "Señales Eléctricas y Control" }]
+    specs: [
+      { label: "Tipo", value: "Conector Circular Multipin" },
+      { label: "Aplicación", value: "Señales Eléctricas y Control" },
+      { label: "Pines", value: "4 a 37 contactos" },
+      { label: "Material", value: "Aluminio anodizado / Niquelado" },
+      { label: "Protección", value: "IP67 / IP68" },
+      { label: "Norma", value: "MIL-DTL-38999 / IEC 61076" }
+    ]
   },
   {
     id: "inst-022",
@@ -283,7 +381,14 @@ const PRODUCTS_DATA = [
     image: "imagenesbrochure/01_Instrumentacion/Kits_Sellos_Pacseal_Hydraulics.jpeg",
     shortDesc: "Kit de sellos y reparación para válvulas SV-100.",
     fullDesc: "Seal Kit SV-100 Control Valve de Pacseal Hydraulics (Made in U.S.A.). Incluye elastómeros, anillos y empaques originales.",
-    specs: [{ label: "Marca", value: "Pacseal Hydraulics" }, { label: "Modelo Compatible", value: "SV-100 Control Valve" }]
+    specs: [
+      { label: "Marca", value: "Pacseal Hydraulics (U.S.A.)" },
+      { label: "Modelo Compatible", value: "SV-100 Control Valve" },
+      { label: "Contenido", value: "Elastómeros, O-rings, anillos de respaldo" },
+      { label: "Material sellos", value: "Viton, Buna-N, PTFE" },
+      { label: "Tipo", value: "Kit de reparación completo" },
+      { label: "Certificación", value: "API 6A / Original OEM" }
+    ]
   },
 
 

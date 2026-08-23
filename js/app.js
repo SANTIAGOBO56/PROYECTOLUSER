@@ -69,7 +69,6 @@ function renderCategoryTabs() {
     >
       <i class="fa-solid ${cat.icon}"></i>
       <span>${cat.name}</span>
-      <span class="category-tab-count">${cat.count}</span>
     </button>
   `).join("");
 }
@@ -132,8 +131,7 @@ function renderProductsGrid() {
         <div style="width: 240px; height: 240px; margin: 0 auto 2rem; overflow: hidden; background: #fff; padding: 15px; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; cursor: zoom-in;" onclick="showLightbox('${product.image}'); event.stopPropagation();">
           <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
-        <div class="brochure-line-name" style="margin-bottom: 1rem; font-size: 1.5rem; color: #1e293b; cursor: pointer;" onclick="openProductModal('${product.id}')">${product.name}</div>
-        <span class="brochure-line-count" style="font-size: 1.1rem; color: #64748b; margin-bottom: 2rem; display: block;">CÓD: ${product.code}</span>
+        <div class="brochure-line-name" style="margin-bottom: 1.5rem; font-size: 1.5rem; color: #1e293b; cursor: pointer;" onclick="openProductModal('${product.id}')">${product.name}</div>
         
         <button onclick="openProductModal('${product.id}')" style="width: 100%; padding: 0.75rem; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: #fff; border: none; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: transform 0.2s; box-shadow: 0 4px 12px rgba(124,58,237,0.2);">
           VER MÁS
