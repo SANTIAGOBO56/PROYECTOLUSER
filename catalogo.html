@@ -504,8 +504,22 @@
           <li><a href="index.html" class="nav-link">INICIO</a></li>
           <li><a href="index.html#productos" class="nav-link">PRODUCTOS</a></li>
           <li><a href="contacto.html" class="nav-link">CONTÁCTANOS</a></li>
-          <li><a href="#" class="nav-link active-pill">BROCHURE DIGITAL</a></li>
-        </ul>
+          <li class="nav-dropdown">
+            <a href="catalogo.html" class="nav-link active-pill">BROCHURE DIGITAL <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+            <div class="nav-dropdown-content">
+              <a href="catalogo.html?linea=instrumentacion">Instrumentación</a>
+              <a href="catalogo.html?linea=bombas-consumibles">Bombas y Consumibles</a>
+              <a href="catalogo.html?linea=manejo-fluidos">Manejo y Control de Fluidos</a>
+              <a href="catalogo.html?linea=transmision-potencia">Transmisión de Potencia</a>
+              <a href="catalogo.html?linea=herramientas-industriales">Herramientas Industriales</a>
+              <a href="catalogo.html?linea=productos-electricos">Productos Eléctricos</a>
+              <a href="catalogo.html?linea=herramientas-manuales">Herramientas Manuales</a>
+              <a href="catalogo.html?linea=mangueras-conectores">Mangueras y Conectores</a>
+              <a href="catalogo.html?linea=pinturas">Pinturas</a>
+              <a href="catalogo.html?linea=epp">Elementos de Protección</a>
+              <a href="catalogo.html?linea=lubricantes">Lubricantes y Adhesivos</a>
+            </div>
+          </li>
       </nav>
 
       <div class="header-actions">
@@ -582,6 +596,9 @@
         .brochure-category-tabs .category-tab-btn i { margin-right: 0.5rem; }
         .brochure-category-tabs .category-tab-count { margin-left: 0.5rem; background: rgba(0,0,0,0.1); padding: 2px 8px; border-radius: 20px; font-size: 0.8rem; }
       </style>
+
+      <!-- Subfiltros -->
+      <div id="subfiltersContainer" class="subfilters-container"></div>
 
       <!-- Active Category Indicator -->
       <div id="activeCategoryBar" class="brochure-active-category-bar" style="display: none;"></div>
@@ -713,6 +730,13 @@
   </a>
 
   <!-- Carga de Scripts -->
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="document.getElementById('lightbox').style.display='none'">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox-caption"></div>
+  </div>
+
   <script src="js/products.js"></script>
   <script src="js/app.js"></script>
 

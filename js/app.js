@@ -13,6 +13,7 @@ const COMPANY_CONFIG = {
 // Estado Global de la Aplicación
 const state = {
   activeCategory: "todas",
+  activeSubGroup: null,
   searchQuery: "",
   cart: [], // Arreglo de items para cotización: { product, quantity, notes }
   selectedProductModal: null,
@@ -29,6 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (linea) {
     state.activeCategory = linea;
   }
+
+  // Asignar subgrupos dinámicamente a la instrumentación
+  window.PRODUCTS_DATA.forEach(p => {
+    if (p.category === 'instrumentacion') {
+      const n = p.name.toLowerCase();
+      if (n.includes('manómetro') || n.includes('manometros') || n.includes('indicador') || n.includes('instrumento circular') || n.includes('contador')) p.subGroup = 'Manómetros e Indicadores';
+      else if (n.includes('válvula') || n.includes('valvula') || n.includes('manifold')) p.subGroup = 'Válvulas y Manifolds';
+      else if (n.includes('filtro') || n.includes('carcasa')) p.subGroup = 'Filtros';
+      else if (n.includes('sello') || n.includes('kits')) p.subGroup = 'Kits y Sellos';
+      else if (n.includes('bomba') || n.includes('test pump') || n.includes('acumulador')) p.subGroup = 'Equipos y Bombas';
+      else if (n.includes('conector') || n.includes('interruptor')) p.subGroup = 'Eléctrico y Sensores';
+      else p.subGroup = 'Otros';
+    }
+  });
 
   renderCategoryTabs();
   renderProductsGrid();
@@ -72,9 +87,10 @@ function renderProductsGrid() {
   const grid = document.getElementById("productsGrid");
   if (!grid || !window.PRODUCTS_DATA) return;
 
-  // Filtrado por Categoría y Buscador
+  // Filtrado por Categoría, Subgrupo y Buscador
   const filtered = window.PRODUCTS_DATA.filter(product => {
     const matchesCategory = state.activeCategory === "todas" || product.category === state.activeCategory;
+    const matchesSubGroup = !state.activeSubGroup || product.subGroup === state.activeSubGroup;
     const q = state.searchQuery.toLowerCase().trim();
     const matchesSearch = !q || 
       product.name.toLowerCase().includes(q) ||
@@ -82,8 +98,10 @@ function renderProductsGrid() {
       product.shortDesc.toLowerCase().includes(q) ||
       product.categoryName.toLowerCase().includes(q);
 
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesSubGroup && matchesSearch;
   });
+
+  renderSubFilters();
 
   // Agrupar productos alfabéticamente (ej. todos los manómetros juntos, válvulas juntas)
   filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -111,7 +129,7 @@ function renderProductsGrid() {
   grid.innerHTML = filtered.map(product => {
     return `
       <div class="brochure-line-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2.5rem 1.5rem; text-align: center;">
-        <div style="width: 240px; height: 240px; margin: 0 auto 2rem; overflow: hidden; background: #fff; padding: 15px; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="openProductModal('${product.id}')">
+        <div style="width: 240px; height: 240px; margin: 0 auto 2rem; overflow: hidden; background: #fff; padding: 15px; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; cursor: zoom-in;" onclick="showLightbox('${product.image}'); event.stopPropagation();">
           <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
         <div class="brochure-line-name" style="margin-bottom: 1rem; font-size: 1.5rem; color: #1e293b; cursor: pointer;" onclick="openProductModal('${product.id}')">${product.name}</div>
@@ -123,6 +141,39 @@ function renderProductsGrid() {
       </div>
     `;
   }).join("");
+}
+
+// ==========================================================================
+// RENDERIZADO DE SUBFILTROS (ETIQUETAS)
+// ==========================================================================
+function renderSubFilters() {
+  const container = document.getElementById("subfiltersContainer");
+  if (!container) return;
+
+  if (state.activeCategory === "todas" || state.searchQuery) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const productsInCategory = window.PRODUCTS_DATA.filter(p => p.category === state.activeCategory && p.subGroup);
+  if (productsInCategory.length === 0) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const uniqueSubGroups = [...new Set(productsInCategory.map(p => p.subGroup))].sort();
+
+  let html = `<button class="subfilter-btn ${!state.activeSubGroup ? 'active' : ''}" onclick="setSubGroup(null)">Todos</button>`;
+  uniqueSubGroups.forEach(sg => {
+    html += `<button class="subfilter-btn ${state.activeSubGroup === sg ? 'active' : ''}" onclick="setSubGroup('${sg}')">${sg}</button>`;
+  });
+
+  container.innerHTML = html;
+}
+
+function setSubGroup(subGroup) {
+  state.activeSubGroup = subGroup;
+  renderProductsGrid();
 }
 
 // Configuración del Buscador en tiempo real
@@ -278,6 +329,15 @@ function toggleCotizadorDrawer(open = true) {
   }
 }
 
+function showLightbox(src) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  if (lightbox && lightboxImg) {
+    lightbox.style.display = "flex";
+    lightboxImg.src = src;
+  }
+}
+
 // ==========================================================================
 // 5. MODAL DE DETALLES
 // ==========================================================================
@@ -301,7 +361,7 @@ function openProductModal(productId) {
   body.innerHTML = `
     <div class="modal-product-grid">
       <div>
-        <img src="${product.image}" alt="${product.name}" class="modal-product-img" style="cursor: zoom-in;" onclick="window.open(this.src, '_blank')" title="Clic para ampliar imagen">
+        <img src="${product.image}" alt="${product.name}" class="modal-product-img" style="cursor: zoom-in;" onclick="showLightbox(this.src); event.stopPropagation();" title="Clic para ampliar imagen">
         <button class="btn-send-whatsapp-quote" style="margin-top: 1rem;" onclick="addToCart('${product.id}'); toggleCotizadorDrawer(true); closeProductModal();">
           <i class="fa-solid fa-plus-circle"></i> AGREGAR AL COTIZADOR
         </button>
