@@ -2170,26 +2170,27 @@ textarea.form-control {
   display: none;
   position: absolute;
   top: 100%;
-  right: 0;
-  background-color: rgba(255,255,255,0.97);
+  left: 0;
+  background-color: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(12px);
-  min-width: 210px;
+  min-width: 230px;
   max-height: 380px;
   overflow-y: auto;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   border-radius: 10px;
-  padding: 0.35rem 0;
+  padding: 0.5rem 0;
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.25s ease;
   scrollbar-width: thin;
-  scrollbar-color: rgba(124,58,237,0.3) transparent;
+  scrollbar-color: rgba(124,58,237,0.5) transparent;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .nav-dropdown-content::-webkit-scrollbar {
   width: 4px;
 }
 .nav-dropdown-content::-webkit-scrollbar-thumb {
-  background: rgba(124,58,237,0.3);
+  background: rgba(124,58,237,0.5);
   border-radius: 4px;
 }
 .nav-dropdown:hover .nav-dropdown-content {
@@ -2197,18 +2198,18 @@ textarea.form-control {
   opacity: 1;
 }
 .nav-dropdown-content a {
-  color: var(--text-main);
-  padding: 7px 14px;
+  color: #cbd5e1;
+  padding: 8px 16px;
   text-decoration: none;
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
 }
 .nav-dropdown-content a:hover {
-  background-color: rgba(124,58,237,0.08);
-  color: var(--color-accent-purple);
+  background-color: rgba(124,58,237,0.2);
+  color: #fff;
 }
 .nav-dropdown-content a.active-dropdown-item {
   background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);

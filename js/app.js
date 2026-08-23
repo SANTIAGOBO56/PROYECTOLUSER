@@ -24,12 +24,17 @@ const state = {
 // 1. INICIALIZACIÓN AL CARGAR EL DOM
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Parse URL parameters for direct category linking
-  const urlParams = new URLSearchParams(window.location.search);
-  const linea = urlParams.get('linea');
-  if (linea) {
-    state.activeCategory = linea;
+  // Determinar categoría por nombre de archivo
+  const path = window.location.pathname;
+  let detectedCategory = "todas";
+  if (window.CATEGORIES_DATA) {
+    window.CATEGORIES_DATA.forEach(cat => {
+      if (cat.id !== "todas" && path.includes(cat.id + ".html")) {
+        detectedCategory = cat.id;
+      }
+    });
   }
+  state.activeCategory = detectedCategory;
 
   // Asignar subgrupos dinámicamente a la instrumentación
   window.PRODUCTS_DATA.forEach(p => {
@@ -74,9 +79,11 @@ function renderCategoryTabs() {
 }
 
 function setCategory(categoryId) {
-  state.activeCategory = categoryId;
-  renderCategoryTabs();
-  renderProductsGrid();
+  if (categoryId === 'todas') {
+    window.location.href = 'catalogo.html';
+  } else {
+    window.location.href = categoryId + '.html';
+  }
 }
 
 // ==========================================================================
@@ -102,8 +109,16 @@ function renderProductsGrid() {
 
   renderSubFilters();
 
-  // Agrupar productos alfabéticamente (ej. todos los manómetros juntos, válvulas juntas)
-  filtered.sort((a, b) => a.name.localeCompare(b.name));
+  // Agrupar productos alfabéticamente
+  filtered.sort((a, b) => {
+    // Regla especial para Instrumentación: Test Pump (inst-006) y Acumulador (inst-001) de primeros
+    const priority = { "inst-006": 1, "inst-001": 2 };
+    const aPrio = priority[a.id] || 99;
+    const bPrio = priority[b.id] || 99;
+    
+    if (aPrio !== bPrio) return aPrio - bPrio;
+    return a.name.localeCompare(b.name);
+  });
 
   if (filtered.length === 0) {
     grid.innerHTML = `
