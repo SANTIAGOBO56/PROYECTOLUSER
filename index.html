@@ -93,7 +93,7 @@
       <div class="termo-products-grid termo-cards-grid">
         <!-- Instrumentación -->
         <div class="termo-product-card">
-          <div class="circle-img-box">
+          <div class="circle-img-box" onclick="openImageModal('images/imagen instrumentacion 1.jpg')" style="cursor: zoom-in;" title="Ampliar imagen">
             <img src="images/imagen instrumentacion 1.jpg" alt="Instrumentación" style="transform: scale(1.4); object-fit: cover;">
           </div>
           <h4 class="termo-card-title">INSTRUMENTACIÓN</h4>
@@ -101,7 +101,7 @@
         </div>
         <!-- Sensores -->
         <div class="termo-product-card">
-          <div class="circle-img-box">
+          <div class="circle-img-box" onclick="openImageModal('images/electrico.png')" style="cursor: zoom-in;" title="Ampliar imagen">
             <img src="images/electrico.png" alt="Sensores">
           </div>
           <h4 class="termo-card-title">SENSORES DE FLUJO</h4>
@@ -109,7 +109,7 @@
         </div>
         <!-- Transmisión -->
         <div class="termo-product-card">
-          <div class="circle-img-box">
+          <div class="circle-img-box" onclick="openImageModal('images/repuestos.png')" style="cursor: zoom-in;" title="Ampliar imagen">
             <img src="images/repuestos.png" alt="Transmisión">
           </div>
           <h4 class="termo-card-title">TRANSMISIÓN Y POTENCIA</h4>
@@ -117,7 +117,7 @@
         </div>
         <!-- Motores y Bombas -->
         <div class="termo-product-card">
-          <div class="circle-img-box">
+          <div class="circle-img-box" onclick="openImageModal('images/epp.png')" style="cursor: zoom-in;" title="Ampliar imagen">
             <img src="images/epp.png" alt="Bombas">
           </div>
           <h4 class="termo-card-title">MOTORES Y BOMBAS</h4>
@@ -217,5 +217,17 @@
   <!-- Carga de Scripts -->
   <script src="js/products.js"></script>
   <script src="js/app.js"></script>
+
+  <!-- Script para Ampliar Imágenes -->
+  <script>
+    function openImageModal(imgSrc) {
+      const backdrop = document.getElementById('productModalBackdrop');
+      const modalBody = document.getElementById('productModalBody');
+      modalBody.innerHTML = '<img src="' + imgSrc + '" style="width:100%; height:auto; max-height:80vh; object-fit:contain; border-radius:8px;">';
+      backdrop.style.display = 'flex';
+      void backdrop.offsetWidth; // Reflow
+      backdrop.classList.add('show');
+    }
+  </script>
 </body>
 </html>
