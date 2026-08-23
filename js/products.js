@@ -11,18 +11,17 @@ const PRODUCTS_DATA = [
   // ═══════════════════════════════════════════════════════════════
   {
     id: "inst-001",
-    name: "Filtro Separador Parker",
+    name: "Acumulador",
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0301",
-    image: "imagenesbrochure/01_Instrumentacion/P03_01_Filtro_separador_Parker.png",
-    shortDesc: "Sistema de filtración y separación Parker para instrumentación de procesos industriales.",
-    fullDesc: "Equipos de filtración marca Parker para separación de partículas y contaminantes en líneas de instrumentación, gas y líquidos de proceso. Diseñados para ambientes industriales exigentes en Oil & Gas.",
+    image: "imagenesbrochure/01_Instrumentacion/acumulador.jpg",
+    shortDesc: "Acumulador hidroneumático para estabilización de presión y amortiguación.",
+    fullDesc: "Acumulador industrial diseñado para absorber pulsaciones, estabilizar presión y proteger equipos hidráulicos críticos.",
     specs: [
-      { label: "Marca", value: "Parker Hannifin" },
-      { label: "Aplicación", value: "Filtración de gas, aire e instrumentación" },
-      { label: "Material", value: "Acero al carbón / Acero inoxidable" },
-      { label: "Uso", value: "Plantas de proceso, Oil & Gas" }
+      { label: "Tipo", value: "Acumulador Hidroneumático" },
+      { label: "Aplicación", value: "Control y estabilidad de presión" },
+      { label: "Uso", value: "Sistemas hidráulicos de alta exigencia" }
     ]
   },
   {
