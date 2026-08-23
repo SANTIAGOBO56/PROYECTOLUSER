@@ -285,7 +285,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Kit de sellos y reparación para válvulas SV-100.",
     fullDesc: "Seal Kit SV-100 Control Valve de Pacseal Hydraulics (Made in U.S.A.). Incluye elastómeros, anillos y empaques originales.",
     specs: [{ label: "Marca", value: "Pacseal Hydraulics" }, { label: "Modelo Compatible", value: "SV-100 Control Valve" }]
-  }
+  },
 
 
   // ═══════════════════════════════════════════════════════════════
