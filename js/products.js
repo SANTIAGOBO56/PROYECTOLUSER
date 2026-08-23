@@ -30,7 +30,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0402",
-    image: "imagenesbrochure/01_Instrumentacion/P04_02_Bomba_instrumento_hidráulico_de_prueba.png",
+    image: "imagenesbrochure/01_Instrumentacion/Test_Pump.png",
     shortDesc: "Bomba hidráulica de prueba para calibración y verificación de manómetros e instrumentos.",
     fullDesc: "Equipo portátil de prueba hidrostática para calibración de manómetros y transmisores de presión en campo. Generación de presión manual para verificación de instrumentos.",
     specs: [
