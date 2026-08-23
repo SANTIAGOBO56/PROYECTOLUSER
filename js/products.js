@@ -25,6 +25,22 @@ const PRODUCTS_DATA = [
     ]
   },
   {
+    id: "inst-006",
+    name: "Test Pump (Bomba de Prueba Hidráulica)",
+    category: "instrumentacion",
+    categoryName: "Equipos y Partes de Instrumentación",
+    code: "SML-INST-0402",
+    image: "imagenesbrochure/01_Instrumentacion/P04_02_Bomba_instrumento_hidráulico_de_prueba.png",
+    shortDesc: "Bomba hidráulica de prueba para calibración y verificación de manómetros e instrumentos.",
+    fullDesc: "Equipo portátil de prueba hidrostática para calibración de manómetros y transmisores de presión en campo. Generación de presión manual para verificación de instrumentos.",
+    specs: [
+      { label: "Tipo", value: "Bomba de prueba hidrostática manual" },
+      { label: "Presión máx.", value: "Hasta 10,000 PSI" },
+      { label: "Uso", value: "Calibración y verificación en campo" },
+      { label: "Portabilidad", value: "Compacta y portátil con maletín" }
+    ]
+  },
+  {
     id: "inst-002",
     name: "Panel Indicador de Bombas",
     category: "instrumentacion",
@@ -86,22 +102,6 @@ const PRODUCTS_DATA = [
       { label: "Conexión", value: "¼\" NPT, ½\" NPT" },
       { label: "Material caja", value: "Acero Inoxidable AISI 316" },
       { label: "Norma", value: "EN 837-1 / ASME B40.100" }
-    ]
-  },
-  {
-    id: "inst-006",
-    name: "Bomba Hidráulica de Prueba",
-    category: "instrumentacion",
-    categoryName: "Equipos y Partes de Instrumentación",
-    code: "SML-INST-0402",
-    image: "imagenesbrochure/01_Instrumentacion/P04_02_Bomba_instrumento_hidráulico_de_prueba.png",
-    shortDesc: "Bomba hidráulica de prueba para calibración y verificación de manómetros e instrumentos.",
-    fullDesc: "Equipo portátil de prueba hidrostática para calibración de manómetros y transmisores de presión en campo. Generación de presión manual para verificación de instrumentos.",
-    specs: [
-      { label: "Tipo", value: "Bomba de prueba hidrostática manual" },
-      { label: "Presión máx.", value: "Hasta 10,000 PSI" },
-      { label: "Uso", value: "Calibración y verificación en campo" },
-      { label: "Portabilidad", value: "Compacta y portátil con maletín" }
     ]
   },
   {
