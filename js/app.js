@@ -6,7 +6,7 @@
 const COMPANY_CONFIG = {
   name: "Suministros Industriales LUSER (SM LUSER)",
   whatsappNumber: "573118057692", // WhatsApp Oficial: 3118057692
-  email: "ventas@smluser.com",
+  email: "suministrosindustrialesluser@gmail.com",
   phoneDisplay: "+57 311 805 7692"
 };
 
@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupContactForm();
   setupMobileMenu();
   updateCartUI();
+  setupNavHighlighting();
 });
 
 
@@ -543,7 +544,7 @@ function setupContactForm() {
     );
     
     // Correo destino
-    const targetEmail = COMPANY_CONFIG.email || "ventas@smluser.com";
+    const targetEmail = COMPANY_CONFIG.email || "suministrosindustrialesluser@gmail.com";
     
     // Abre el cliente de correo por defecto (Gmail, Outlook, App de Correo)
     window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
@@ -585,6 +586,24 @@ function setupMobileMenu() {
       const icon = toggleBtn.querySelector('i');
       icon.classList.remove('fa-xmark');
       icon.classList.add('fa-bars');
+    });
+  });
+}
+
+// ==========================================================================
+// 9. RESALTADO ACTIVO DE ENLACES DEL MENÚ (INICIO, PRODUCTOS)
+// ==========================================================================
+function setupNavHighlighting() {
+  const links = document.querySelectorAll('.nav-menu > li > a.nav-link');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      // Solo aplicar a los enlaces de la misma página (los que empiezan con #)
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        links.forEach(l => l.classList.remove('active-pill'));
+        this.classList.add('active-pill');
+      }
     });
   });
 }
