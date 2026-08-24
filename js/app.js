@@ -1,4 +1,4 @@
-// ==========================================================================
+﻿// ==========================================================================
 // LÓGICA INTERACTIVA Y ESTADO DE LA APLICACIÓN - SM LUSER
 // ==========================================================================
 
@@ -6,7 +6,7 @@
 const COMPANY_CONFIG = {
   name: "Suministros Industriales LUSER (SM LUSER)",
   whatsappNumber: "573118057692", // WhatsApp Oficial: 3118057692
-  email: "suministrosindustrialesluser@gmail.com",
+  email: "ventas@smluser.com",
   phoneDisplay: "+57 311 805 7692"
 };
 
@@ -55,9 +55,26 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSearchInput();
   setupHeroSlider();
   setupContactForm();
+  
+  // Interceptar clicks del dropdown en catalogo.html
+  if (window.location.pathname.includes('catalogo.html')) {
+    const dropdownLinks = document.querySelectorAll('.nav-dropdown-content a');
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.endsWith('.html') && !href.includes('catalogo.html')) {
+          e.preventDefault();
+          const catId = href.replace('.html', '');
+          if (typeof window.setBrochureCategory === 'function') {
+            window.setBrochureCategory(catId);
+            renderCategoryTabs();
+          }
+        }
+      });
+    });
+  }
   setupMobileMenu();
   updateCartUI();
-  setupNavHighlighting();
 });
 
 
@@ -86,9 +103,19 @@ function renderCategoryTabs() {
 }
 
 function setCategory(categoryId) {
-  if (categoryId === 'todas') {
-    window.location.href = 'catalogo.html';
+  if (window.location.pathname.includes('catalogo.html')) {
+    if (typeof window.setBrochureCategory === 'function') {
+      window.setBrochureCategory(categoryId);
+      renderCategoryTabs();
+    }
   } else {
+    if (categoryId === 'todas') {
+      window.location.href = 'catalogo.html';
+    } else {
+      window.location.href = categoryId + '.html';
+    }
+  }
+} else {
     window.location.href = categoryId + '.html';
   }
 }
@@ -544,7 +571,7 @@ function setupContactForm() {
     );
     
     // Correo destino
-    const targetEmail = COMPANY_CONFIG.email || "suministrosindustrialesluser@gmail.com";
+    const targetEmail = COMPANY_CONFIG.email || "ventas@smluser.com";
     
     // Abre el cliente de correo por defecto (Gmail, Outlook, App de Correo)
     window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
@@ -586,24 +613,6 @@ function setupMobileMenu() {
       const icon = toggleBtn.querySelector('i');
       icon.classList.remove('fa-xmark');
       icon.classList.add('fa-bars');
-    });
-  });
-}
-
-// ==========================================================================
-// 9. RESALTADO ACTIVO DE ENLACES DEL MENÚ (INICIO, PRODUCTOS)
-// ==========================================================================
-function setupNavHighlighting() {
-  const links = document.querySelectorAll('.nav-menu > li > a.nav-link');
-  
-  links.forEach(link => {
-    link.addEventListener('click', function() {
-      // Solo aplicar a los enlaces de la misma página (los que empiezan con #)
-      const href = this.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        links.forEach(l => l.classList.remove('active-pill'));
-        this.classList.add('active-pill');
-      }
     });
   });
 }
