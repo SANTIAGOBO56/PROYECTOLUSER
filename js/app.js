@@ -67,6 +67,12 @@ function renderCategoryTabs() {
   const container = document.getElementById("categoryTabsContainer");
   if (!container || !window.CATEGORIES_DATA) return;
 
+  // Si no estamos en el catálogo principal, ocultar los tabs
+  if (!window.location.pathname.includes('catalogo.html')) {
+    container.style.display = 'none';
+    return;
+  }
+
   container.innerHTML = window.CATEGORIES_DATA.map(cat => `
     <button 
       class="category-tab-btn ${state.activeCategory === cat.id ? 'active' : ''}"
