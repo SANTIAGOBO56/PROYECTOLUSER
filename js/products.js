@@ -469,7 +469,7 @@ const PRODUCTS_DATA = [
     category: "fluidos",
     categoryName: "Manejo y Control de Fluidos",
     code: "SML-FL-0602",
-    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P06_02_Conjunto_de_válvulas_y_accesorios.png",
+    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P06_02_Conjunto_de_válvulas_y_accesorios.jpg",
     shortDesc: "Kits completos de válvulas, bridas y accesorios para sistemas de tuberías industriales.",
     fullDesc: "Conjuntos de válvulas y accesorios para ensamble de líneas de proceso. Incluye válvulas de bola, check, bridas, niples y adaptadores en diferentes materiales y presiones nominales.",
     specs: [
@@ -485,7 +485,7 @@ const PRODUCTS_DATA = [
     category: "fluidos",
     categoryName: "Manejo y Control de Fluidos",
     code: "SML-FL-0603",
-    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P06_03_Conector_acople_rojo_para_fluidos.png",
+    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P06_03_Conector_acople_rojo_para_fluidos.jpg",
     shortDesc: "Acoples rápidos y conectores especializados para sistemas de control de fluidos.",
     fullDesc: "Conectores y acoples de alta ingeniería para conexiones rápidas y seguras en líneas de fluidos industriales. Diseñados para aplicaciones de alta presión en sistemas hidráulicos y de proceso.",
     specs: [
@@ -501,7 +501,7 @@ const PRODUCTS_DATA = [
     category: "fluidos",
     categoryName: "Manejo y Control de Fluidos",
     code: "SML-FL-0701",
-    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P07_01_Abrazaderas_conexiones_de_tubería.png",
+    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P07_01_Abrazaderas_conexiones_de_tubería.jpg",
     shortDesc: "Abrazaderas tipo U-bolt, grapas y soportes para fijación de tuberías industriales.",
     fullDesc: "Sistemas de soporte y fijación de tuberías: abrazaderas tipo U-bolt, grapas, colgantes y soportes en acero galvanizado e inoxidable para tendidos de tubería en plantas de proceso.",
     specs: [
@@ -549,7 +549,7 @@ const PRODUCTS_DATA = [
     category: "fluidos",
     categoryName: "Manejo y Control de Fluidos",
     code: "SML-FL-0704",
-    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P07_04_Junta_elementos_de_conexión.png",
+    image: "imagenesbrochure/03_Manejo_y_Control_de_Fluidos/P07_04_Junta_elementos_de_conexión.jpg",
     shortDesc: "Juntas RTJ, espirometálicas y empaques planos para sellado de bridas industriales.",
     fullDesc: "Empaques y juntas industriales: juntas metálicas RTJ (Ring Type Joint) en perfil ovalado y octagonal, juntas espirometálicas con relleno de grafito/PTFE y empaques planos de diferentes materiales.",
     specs: [
