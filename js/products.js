@@ -401,7 +401,7 @@ const PRODUCTS_DATA = [
     category: "bombas",
     categoryName: "Bombas y Consumibles",
     code: "SML-BOM-0501",
-    image: "imagenesbrochure/02_Bombas_y_Consumibles/P05_01_Bomba_centrífuga.png",
+    image: "imagenesbrochure/02_Bombas_y_Consumibles/P05_01_Bomba_centrífuga.jpg",
     shortDesc: "Bombas centrífugas de alto rendimiento para transferencia de fluidos en plantas industriales.",
     fullDesc: "Bombas centrífugas horizontales y verticales para aplicaciones de transferencia de agua, químicos y petróleo. Construcción robusta en hierro fundido y acero inoxidable según requerimiento de proceso.",
     specs: [
@@ -433,7 +433,7 @@ const PRODUCTS_DATA = [
     category: "bombas",
     categoryName: "Bombas y Consumibles",
     code: "SML-BOM-0503",
-    image: "imagenesbrochure/02_Bombas_y_Consumibles/P05_03_Sellos_mecánicos_y_componentes.png",
+    image: "imagenesbrochure/02_Bombas_y_Consumibles/P05_03_Sellos_mecánicos_y_componentes.jpg",
     shortDesc: "Sellos mecánicos, impulsores y kits de reparación para bombas industriales.",
     fullDesc: "Repuestos y consumibles de alta calidad para bombas centrífugas y dosificadoras. Sellos mecánicos en carburo de silicio, impulsores, anillos de desgaste y kits completos de mantenimiento.",
     specs: [
