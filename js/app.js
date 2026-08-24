@@ -59,23 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartUI();
   setupNavHighlighting();
   
-  // Interceptar clicks del dropdown en catalogo.html
-  if (window.location.pathname.includes('catalogo.html')) {
-    const dropdownLinks = document.querySelectorAll('.nav-dropdown-content a');
-    dropdownLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href && href.endsWith('.html') && !href.includes('catalogo.html')) {
-          e.preventDefault();
-          const catId = href.replace('.html', '');
-          if (typeof window.setBrochureCategory === 'function') {
-            window.setBrochureCategory(catId);
-            renderCategoryTabs();
-          }
-        }
-      });
-    });
-  }
 });
 
 
