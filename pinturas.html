@@ -744,132 +744,38 @@
 
   <!-- Brochure-specific init -->
   <script>
-    // Render category line cards
-    function renderBrochureLines() {
-      const grid = document.getElementById('brochureLinesGrid');
-      if (!grid || !window.CATEGORIES_DATA) return;
-
-      grid.innerHTML = window.CATEGORIES_DATA.map(cat => `
-        <div class="brochure-line-card ${state.activeCategory === cat.id ? 'active-line' : ''}" 
-             onclick="setBrochureCategory('${cat.id}')">
-          <div class="brochure-line-icon">
-            <i class="fa-solid ${cat.icon}"></i>
-          </div>
-          <div class="brochure-line-name">${cat.name}</div>
-        </div>
-      `).join('');
-    }
-
-    function setBrochureCategory(catId) {
-      state.activeCategory = catId;
-      renderBrochureLines();
-      renderProductsGrid();
-      updateActiveCategoryBar();
-      
-      // Scroll to catalog
-      const catalogSection = document.getElementById('catalogo');
-      if (catalogSection) {
-        catalogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
     function updateActiveCategoryBar() {
       const bar = document.getElementById('activeCategoryBar');
       if (!bar) return;
-
-      if (state.activeCategory === 'todas') {
-        bar.style.display = 'none';
-        return;
-      }
-
-      const cat = window.CATEGORIES_DATA.find(c => c.id === state.activeCategory);
-      if (!cat) return;
 
       const count = window.PRODUCTS_DATA.filter(p => p.category === state.activeCategory).length;
 
       bar.style.display = 'flex';
       bar.innerHTML = `
-        <i class="fa-solid ${cat.icon}"></i>
+        <i class="fa-solid fa-paint-roller"></i>
         <span>Mostrando: </span>
-        <span class="cat-name">${cat.name}</span>
+        <span class="cat-name">Pinturas</span>
         <span class="cat-count">${count}</span>
-        <button class="btn-clear-filter" onclick="setBrochureCategory('todas')">
+        <button class="btn-clear-filter" onclick="window.location.href='catalogo.html'">
           <i class="fa-solid fa-xmark"></i> Ver Todas
         </button>
       `;
     }
 
-    // Update product count stat dynamically
+    // Update product count stat dynamically (only Pinturas products)
     function updateStatProducts() {
       const el = document.getElementById('statProducts');
       if (el && window.PRODUCTS_DATA) {
-        el.textContent = window.PRODUCTS_DATA.length + '+';
+        const count = window.PRODUCTS_DATA.filter(p => p.category === 'pinturas').length;
+        el.textContent = count + '+';
       }
     }
-
-    // Override the reset search to also update brochure UI
-    const _originalResetSearch = window.resetSearch;
-    window.resetSearch = function() {
-      if (_originalResetSearch) _originalResetSearch();
-      renderBrochureLines();
-      updateActiveCategoryBar();
-    };
 
     // Init brochure on DOM ready
     document.addEventListener('DOMContentLoaded', () => {
-      renderBrochureLines();
       updateActiveCategoryBar();
       updateStatProducts();
-      highlightActiveDropdownItem();
-      personalizeHeroForCategory();
     });
-
-    // Highlight the active dropdown item in the nav
-    function highlightActiveDropdownItem() {
-      const path = window.location.pathname;
-      const dropdownLinks = document.querySelectorAll('.nav-dropdown-content a');
-      dropdownLinks.forEach(link => {
-        const href = link.getAttribute('href') || '';
-        if (href && path.endsWith(href)) {
-          link.classList.add('active-dropdown-item');
-        }
-      });
-    }
-
-    // Personalize hero banner when filtering by category
-    function personalizeHeroForCategory() {
-      const path = window.location.pathname;
-      if (!window.CATEGORIES_DATA) return;
-
-      let activeCatId = null;
-      window.CATEGORIES_DATA.forEach(c => {
-        if (c.id !== 'todas' && path.includes(c.id + '.html')) {
-          activeCatId = c.id;
-        }
-      });
-      
-      if (!activeCatId) return;
-
-      const cat = window.CATEGORIES_DATA.find(c => c.id === activeCatId);
-      if (!cat) return;
-
-      const heroTitle = document.querySelector('.brochure-hero-title');
-      const heroSubtitle = document.querySelector('.brochure-hero-subtitle');
-      const heroBadge = document.querySelector('.brochure-hero-badge');
-
-      if (heroTitle) {
-        heroTitle.innerHTML = `<span>${cat.name}</span><br>Suministros Industriales`;
-      }
-      if (heroSubtitle) {
-        heroSubtitle.textContent = cat.description || `Explora nuestra línea completa de ${cat.name}. Solicita tu cotización directa por WhatsApp.`;
-      }
-      if (heroBadge) {
-        heroBadge.innerHTML = `<i class="fa-solid ${cat.icon}"></i> ${cat.name}`;
-      }
-    }
-
-    // Expose
-    window.setBrochureCategory = setBrochureCategory;
   </script>
 </body>
 </html>

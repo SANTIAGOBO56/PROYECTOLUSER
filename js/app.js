@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 // LÓGICA INTERACTIVA Y ESTADO DE LA APLICACIÓN - SM LUSER
 // ==========================================================================
 
@@ -6,7 +6,7 @@
 const COMPANY_CONFIG = {
   name: "Suministros Industriales LUSER (SM LUSER)",
   whatsappNumber: "573118057692", // WhatsApp Oficial: 3118057692
-  email: "ventas@smluser.com",
+  email: "suministrosindustrialesluser@gmail.com",
   phoneDisplay: "+57 311 805 7692"
 };
 
@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSearchInput();
   setupHeroSlider();
   setupContactForm();
+  setupMobileMenu();
+  updateCartUI();
+  setupNavHighlighting();
   
   // Interceptar clicks del dropdown en catalogo.html
   if (window.location.pathname.includes('catalogo.html')) {
@@ -73,8 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  setupMobileMenu();
-  updateCartUI();
 });
 
 
@@ -114,9 +115,6 @@ function setCategory(categoryId) {
     } else {
       window.location.href = categoryId + '.html';
     }
-  }
-} else {
-    window.location.href = categoryId + '.html';
   }
 }
 
@@ -571,7 +569,7 @@ function setupContactForm() {
     );
     
     // Correo destino
-    const targetEmail = COMPANY_CONFIG.email || "ventas@smluser.com";
+    const targetEmail = COMPANY_CONFIG.email || "suministrosindustrialesluser@gmail.com";
     
     // Abre el cliente de correo por defecto (Gmail, Outlook, App de Correo)
     window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
@@ -614,6 +612,36 @@ function setupMobileMenu() {
       icon.classList.remove('fa-xmark');
       icon.classList.add('fa-bars');
     });
+  });
+}
+
+// ==========================================================================
+// 9. RESALTADO ACTIVO DE ENLACES DEL MENÚ
+// ==========================================================================
+function setupNavHighlighting() {
+  // Resaltado para enlaces en la misma página (ej: Inicio, Productos)
+  const links = document.querySelectorAll('.nav-menu > li > a.nav-link');
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        links.forEach(l => l.classList.remove('active-pill'));
+        this.classList.add('active-pill');
+      }
+    });
+  });
+
+  // Resaltado automático para el menú dropdown según la página actual
+  const path = window.location.pathname;
+  const currentFile = path.split('/').pop() || '';
+  const dropdownLinks = document.querySelectorAll('.nav-dropdown-content a');
+  
+  dropdownLinks.forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const hrefFile = href.split('/').pop().split('?')[0];
+    if (hrefFile && currentFile === hrefFile) {
+      link.classList.add('active-dropdown-item');
+    }
   });
 }
 
