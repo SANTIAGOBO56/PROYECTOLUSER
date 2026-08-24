@@ -288,7 +288,7 @@ const PRODUCTS_DATA = [
     category: "instrumentacion",
     categoryName: "Equipos y Partes de Instrumentación",
     code: "SML-INST-0413",
-    image: "imagenesbrochure/01_Instrumentacion/Manometro_Matherne_15000_PSI_2.jpeg",
+    image: "imagenesbrochure/01_Instrumentacion/Manometro_Matherne_15000_PSI_2.jpg",
     shortDesc: "Manómetro Matherne, equipo de lectura de alta capacidad.",
     fullDesc: "Manómetro Matherne 15000 PSI, equipo pesado para operaciones de alto torque o presión.",
     specs: [
