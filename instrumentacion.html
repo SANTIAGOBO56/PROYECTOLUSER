@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SM LUSER | Brochure Digital — Catálogo de Suministros Industriales</title>
+  <title>SM LUSER | Instrumentación — Equipos y Partes de Medición y Control</title>
   
   <!-- SEO & Meta Etiquetas -->
-  <meta name="description" content="Brochure Digital SM LUSER — Explora nuestras 11 líneas de suministros industriales: Instrumentación, Bombas, Válvulas, Transmisión, Herramientas, EPP, Material Eléctrico y más. Cotiza en línea vía WhatsApp.">
-  <meta name="keywords" content="Brochure Digital, Catálogo Industrial, SM LUSER, Suministros Industriales, Instrumentación, Bombas, Válvulas, Rodamientos, EPP, Herramientas, Material Eléctrico, Colombia, Cotizador WhatsApp">
+  <meta name="description" content="SM LUSER — Línea de Instrumentación: manómetros, válvulas de instrumentación, pressure switches, filtros de alta presión, paneles indicadores y más. Cotiza en línea vía WhatsApp.">
+  <meta name="keywords" content="Instrumentación Industrial, Manómetros, Válvulas de Instrumentación, Pressure Switch, Barksdale, Matherne, Winters, SM LUSER, Colombia, Cotizador WhatsApp">
 
   <!-- Fuentes Tipográficas Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -507,17 +507,17 @@
           <li class="nav-dropdown">
             <a href="catalogo.html" class="nav-link active-pill">BROCHURE DIGITAL <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
             <div class="nav-dropdown-content">
-              <a href="catalogo.html?linea=instrumentacion">Instrumentación</a>
-              <a href="catalogo.html?linea=bombas">Bombas y Consumibles</a>
-              <a href="catalogo.html?linea=fluidos">Manejo y Control de Fluidos</a>
-              <a href="catalogo.html?linea=transmision">Transmisión de Potencia</a>
-              <a href="catalogo.html?linea=herramientas_ind">Herramientas Industriales</a>
-              <a href="catalogo.html?linea=electrico">Productos Eléctricos</a>
-              <a href="catalogo.html?linea=herramientas_man">Herramientas Manuales</a>
-              <a href="catalogo.html?linea=mangueras">Mangueras y Conectores</a>
-              <a href="catalogo.html?linea=pinturas">Pinturas</a>
-              <a href="catalogo.html?linea=epp">Elementos de Protección</a>
-              <a href="catalogo.html?linea=lubricantes">Lubricantes y Adhesivos</a>
+              <a href="instrumentacion.html">Instrumentación</a>
+              <a href="bombas.html">Bombas y Consumibles</a>
+              <a href="fluidos.html">Manejo y Control de Fluidos</a>
+              <a href="transmision.html">Transmisión de Potencia</a>
+              <a href="herramientas_ind.html">Herramientas Industriales</a>
+              <a href="electrico.html">Productos Eléctricos</a>
+              <a href="herramientas_man.html">Herramientas Manuales</a>
+              <a href="mangueras.html">Mangueras y Conectores</a>
+              <a href="pinturas.html">Pinturas</a>
+              <a href="epp.html">Elementos de Protección</a>
+              <a href="lubricantes.html">Lubricantes y Adhesivos</a>
             </div>
           </li>
       </nav>
@@ -534,28 +534,25 @@
     </div>
   </header>
 
-  <!-- BROCHURE HERO BANNER -->
+  <!-- HERO BANNER - INSTRUMENTACIÓN -->
   <section class="brochure-hero" style="padding-top: 8rem;">
     <div class="container">
       <div class="brochure-hero-content">
         <span class="brochure-hero-badge">
-          <i class="fa-solid fa-book-open"></i> Brochure Digital 2025
+          <i class="fa-solid fa-gauge-high"></i> Instrumentación
         </span>
         <h1 class="brochure-hero-title">
-          Catálogo Completo de<br><span>Suministros Industriales</span>
+          Equipos y Partes de<br><span>Instrumentación</span>
         </h1>
         <p class="brochure-hero-subtitle">
-          Explora nuestras 11 líneas de negocio con más de 30 referencias especializadas. 
-          Encuentra el producto que necesitas y solicita tu cotización directa por WhatsApp.
+          Manómetros, válvulas de instrumentación, pressure switches, filtros de alta presión, 
+          paneles indicadores, conectores y más. Encuentra el repuesto o equipo que necesitas 
+          y solicita tu cotización directa por WhatsApp.
         </p>
         <div class="brochure-hero-stats">
           <div class="brochure-stat">
-            <div class="brochure-stat-number" id="statProducts">30+</div>
+            <div class="brochure-stat-number" id="statProducts">22+</div>
             <div class="brochure-stat-label">Productos</div>
-          </div>
-          <div class="brochure-stat">
-            <div class="brochure-stat-number">11</div>
-            <div class="brochure-stat-label">Líneas de Negocio</div>
           </div>
           <div class="brochure-stat">
             <div class="brochure-stat-number">24h</div>
@@ -797,11 +794,12 @@
       `;
     }
 
-    // Update product count stat dynamically
+    // Update product count stat dynamically (only instrumentación products)
     function updateStatProducts() {
       const el = document.getElementById('statProducts');
       if (el && window.PRODUCTS_DATA) {
-        el.textContent = window.PRODUCTS_DATA.length + '+';
+        const count = window.PRODUCTS_DATA.filter(p => p.category === 'instrumentacion').length;
+        el.textContent = count + '+';
       }
     }
 
@@ -825,45 +823,20 @@
     // Highlight the active dropdown item in the nav
     function highlightActiveDropdownItem() {
       const path = window.location.pathname;
+      const currentFile = path.split('/').pop() || '';
       const dropdownLinks = document.querySelectorAll('.nav-dropdown-content a');
       dropdownLinks.forEach(link => {
         const href = link.getAttribute('href') || '';
-        if (href && path.endsWith(href)) {
+        const hrefFile = href.split('/').pop().split('?')[0];
+        if (hrefFile && currentFile === hrefFile) {
           link.classList.add('active-dropdown-item');
         }
       });
     }
 
-    // Personalize hero banner when filtering by category
+    // Personalize hero banner when filtering by category (no longer needed for this page, hero is hardcoded)
     function personalizeHeroForCategory() {
-      const path = window.location.pathname;
-      if (!window.CATEGORIES_DATA) return;
-
-      let activeCatId = null;
-      window.CATEGORIES_DATA.forEach(c => {
-        if (c.id !== 'todas' && path.includes(c.id + '.html')) {
-          activeCatId = c.id;
-        }
-      });
-      
-      if (!activeCatId) return;
-
-      const cat = window.CATEGORIES_DATA.find(c => c.id === activeCatId);
-      if (!cat) return;
-
-      const heroTitle = document.querySelector('.brochure-hero-title');
-      const heroSubtitle = document.querySelector('.brochure-hero-subtitle');
-      const heroBadge = document.querySelector('.brochure-hero-badge');
-
-      if (heroTitle) {
-        heroTitle.innerHTML = `<span>${cat.name}</span><br>Suministros Industriales`;
-      }
-      if (heroSubtitle) {
-        heroSubtitle.textContent = cat.description || `Explora nuestra línea completa de ${cat.name}. Solicita tu cotización directa por WhatsApp.`;
-      }
-      if (heroBadge) {
-        heroBadge.innerHTML = `<i class="fa-solid ${cat.icon}"></i> ${cat.name}`;
-      }
+      // Hero content is now set directly in the HTML for each line page
     }
 
     // Expose
