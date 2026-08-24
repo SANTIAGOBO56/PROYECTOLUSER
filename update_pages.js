@@ -17,7 +17,6 @@ const CATEGORIES_DATA = [
   { id: "lubricantes", name: "Lubricantes y Adhesivos", icon: "fa-oil-can", description: "CRC, Loctite (243/263/577), WD-40 y aerosoles especializados." }
 ];
 
-
 for (const catId of categoriesList) {
   const file = catId + '.html';
   if (!fs.existsSync(file)) continue;
@@ -30,11 +29,8 @@ for (const catId of categoriesList) {
     continue;
   }
 
-  // 1. Remove LÍNEAS DE NEGOCIO section completely
-  content = content.replace(/<!-- LÍNEAS DE NEGOCIO \(CATEGORY SHOWCASE\) -->[\s\S]*?(?=<!-- CATÁLOGO CON BUSCADOR -->)/g, '');
-
-  // 2. Replace HERO BANNER
-  const newHero = `<!-- HERO BANNER - ${cat.name.toUpperCase()} -->
+  // Replace HERO BANNER safely using split
+  const newHero = `<!-- BROCHURE HERO BANNER - ${cat.name.toUpperCase()} -->
   <section class="brochure-hero" style="padding-top: 8rem;">
     <div class="container">
       <div class="brochure-hero-content">
@@ -64,47 +60,13 @@ for (const catId of categoriesList) {
       </div>
     </div>
   </section>\n\n  `;
-  content = content.replace(/<!-- HERO BANNER -->[\s\S]*?(?=<!-- CATÁLOGO CON BUSCADOR -->)/g, newHero);
 
-
-  // 3. Update Brochure-specific init script at the bottom
-  const newScript = `<!-- Brochure-specific init -->
-  <script>
-    function updateActiveCategoryBar() {
-      const bar = document.getElementById('activeCategoryBar');
-      if (!bar) return;
-
-      const count = window.PRODUCTS_DATA.filter(p => p.category === state.activeCategory).length;
-
-      bar.style.display = 'flex';
-      bar.innerHTML = \`
-        <i class="fa-solid ${cat.icon}"></i>
-        <span>Mostrando: </span>
-        <span class="cat-name">${cat.name}</span>
-        <span class="cat-count">\${count}</span>
-        <button class="btn-clear-filter" onclick="window.location.href='catalogo.html'">
-          <i class="fa-solid fa-xmark"></i> Ver Todas
-        </button>
-      \`;
-    }
-
-    // Update product count stat dynamically (only ${cat.name} products)
-    function updateStatProducts() {
-      const el = document.getElementById('statProducts');
-      if (el && window.PRODUCTS_DATA) {
-        const count = window.PRODUCTS_DATA.filter(p => p.category === '${catId}').length;
-        el.textContent = count + '+';
-      }
-    }
-
-    // Init brochure on DOM ready
-    document.addEventListener('DOMContentLoaded', () => {
-      updateActiveCategoryBar();
-      updateStatProducts();
-    });
-  </script>`;
-  content = content.replace(/<!-- Brochure-specific init -->[\s\S]*?<\/script>/, newScript);
+  if (content.includes('<!-- BROCHURE HERO BANNER -->') && content.includes('<!-- CATÁLOGO DE PRODUCTOS -->')) {
+    content = content.split('<!-- BROCHURE HERO BANNER -->')[0] + newHero + '<!-- CATÁLOGO DE PRODUCTOS -->' + content.split('<!-- CATÁLOGO DE PRODUCTOS -->')[1];
+  } else if (content.includes('<!-- BROCHURE HERO BANNER -')) {
+      // already updated? Do nothing.
+  }
 
   fs.writeFileSync(file, content, 'utf-8');
-  console.log(`Updated ${file}`);
+  console.log(`Updated hero in ${file}`);
 }
