@@ -149,21 +149,21 @@ function renderProductsGrid() {
     return;
   }
 
-  // Diseño de a 3 cuadritos gigantes para todas las líneas
+  // Diseño de a 3 cuadritos gigantes para todas las líneas (Responsive)
   grid.className = "";
   grid.style.display = "grid";
-  grid.style.gridTemplateColumns = "repeat(auto-fill, minmax(320px, 1fr))";
-  grid.style.gap = "2.5rem";
+  grid.style.gridTemplateColumns = "repeat(auto-fill, minmax(270px, 1fr))";
+  grid.style.gap = "1.5rem";
 
   grid.innerHTML = filtered.map(product => {
     return `
-      <div class="brochure-line-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2.5rem 1.5rem; text-align: center;">
-        <div style="width: 240px; height: 240px; margin: 0 auto 2rem; overflow: hidden; background: #fff; padding: 15px; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; cursor: zoom-in;" onclick="showLightbox('${product.image}'); event.stopPropagation();">
-          <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain;">
+      <div class="brochure-line-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.75rem 1rem; text-align: center;">
+        <div style="width: 100%; max-width: 220px; height: 220px; margin: 0 auto 1.5rem; overflow: hidden; background: #fff; padding: 12px; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; cursor: zoom-in;" onclick="showLightbox('${product.image}'); event.stopPropagation();">
+          <img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
         </div>
-        <div class="brochure-line-name" style="margin-bottom: 1.5rem; font-size: 1.5rem; color: #1e293b; cursor: pointer;" onclick="openProductModal('${product.id}')">${product.name}</div>
+        <div class="brochure-line-name" style="margin-bottom: 1.25rem; font-size: 1.25rem; color: #1e293b; cursor: pointer; font-weight: 700; line-height: 1.3;" onclick="openProductModal('${product.id}')">${product.name}</div>
         
-        <button onclick="openProductModal('${product.id}')" style="width: 100%; padding: 0.75rem; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: #fff; border: none; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: transform 0.2s; box-shadow: 0 4px 12px rgba(124,58,237,0.2);">
+        <button onclick="openProductModal('${product.id}')" style="width: 100%; padding: 0.75rem; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: #fff; border: none; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: transform 0.2s; box-shadow: 0 4px 12px rgba(124,58,237,0.2); touch-action: manipulation;">
           VER MÁS
         </button>
       </div>
@@ -586,14 +586,31 @@ function setupMobileMenu() {
     }
   });
 
-  // Cerrar el menú si hacen clic en un enlace
-  const links = navMenu.querySelectorAll('.nav-link');
-  links.forEach(link => {
+  // Manejar despliegue de menú dropdown en celular (acordeón)
+  const dropdowns = navMenu.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('a.nav-link');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth <= 992) {
+          // En móvil, al tocar el botón de Brochure Digital alterna el acordeón
+          e.preventDefault();
+          dropdown.classList.toggle('mobile-open');
+        }
+      });
+    }
+  });
+
+  // Cerrar el menú únicamente si hacen clic en un enlace final
+  const finalLinks = navMenu.querySelectorAll('a:not(.nav-dropdown > a.nav-link), .nav-dropdown-content a');
+  finalLinks.forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('active');
       const icon = toggleBtn.querySelector('i');
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
+      if (icon) {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
     });
   });
 }
